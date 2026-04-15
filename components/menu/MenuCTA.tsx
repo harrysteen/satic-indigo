@@ -18,12 +18,12 @@ export default function MenuCTA() {
         />
 
         {/* Left Half Flower Decoration - Moved more inside */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-48 md:w-[420px] h-auto opacity-70 pointer-events-none select-none -translate-x-[30%] z-0">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-36 md:w-64 h-auto opacity-90 pointer-events-none select-none -translate-x-[10%] z-0">
             <img src="/PNGS/half-flower.png" alt="" className="w-full h-auto object-contain" />
         </div>
         
         {/* Right Half Flower Decoration (Flipped) - Moved more inside */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-48 md:w-[420px] h-auto opacity-70 pointer-events-none select-none translate-x-[30%] z-0">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-36 md:w-64 h-auto opacity-90 pointer-events-none select-none translate-x-[10%] z-0">
             <img src="/PNGS/half-flower.png" alt="" className="w-full h-auto object-contain scale-x-[-1]" />
         </div>
 

@@ -11,6 +11,7 @@ import { OFFERS_DATA, SPECIALS_DATA, SIGNATURE_DATA } from "./MenuData";
 
 import { FlowerDecoration } from "./MenuDecorations";
 import VioletPetals from "../decorations/VioletPetals";
+import MenuFlowerDecorations from "./MenuFlowerDecorations";
 import MenuHeader from "./MenuHeader";
 import PageHeader from "../layout/PageHeader";
 
@@ -53,12 +54,7 @@ export default function FeaturedMenu() {
       {/* 3. The Interactive Menu Tab Section */}
       <div className="w-full bg-white relative pb-10 md:pb-16 overflow-hidden">
         {/* Side Decorations */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-48 md:w-80 h-auto opacity-30 pointer-events-none select-none -translate-x-1/2">
-            <img src="/PNGS/half-flower.png" alt="" className="w-full h-auto object-contain" />
-        </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-48 md:w-80 h-auto opacity-30 pointer-events-none select-none translate-x-1/2">
-            <img src="/PNGS/half-flower.png" alt="" className="w-full h-auto object-contain scale-x-[-1]" />
-        </div>
+        <MenuFlowerDecorations />
 
         <div className="w-full max-w-[1400px] mx-auto pt-10 md:pt-16 flex flex-col items-center">
              <MenuHeader />
@@ -128,13 +124,15 @@ export default function FeaturedMenu() {
       {/* 5. Signature Dining Section (The Dark Themed events) */}
       <div id="events" className="w-full py-20 md:py-32 bg-[#20064A] relative overflow-hidden">
         {/* Patterned Background Overlay */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          <div className="grid grid-cols-6 md:grid-cols-12 gap-8 p-4">
-             {Array.from({ length: 48 }).map((_, i) => (
-                <img key={i} src="/logo/logoicon.png" alt="" className="w-8 h-8 opacity-20" />
-             ))}
-          </div>
-        </div>
+        <div 
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          style={{
+            backgroundImage: 'url("/logo/logoicon.png")',
+            backgroundSize: '90px',
+            backgroundRepeat: 'repeat',
+            backgroundPosition: 'center'
+          }}
+        />
 
         <div className="w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center relative z-10">
             <div className="text-center mb-16 flex flex-col items-center">

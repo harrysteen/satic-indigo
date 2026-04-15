@@ -10,7 +10,7 @@ const links = [
   { href: "/catering", label: "Catering" },
   { href: "/contact", label: "Connect" },
   { href: "/careers", label: "Careers" },
-  { href: "/reserve", label: "Reserve a Table" },
+  { href: "/contact#reservation", label: "Reserve a Table" },
   { href: "/order", label: "Order Now" },
 ];
 
