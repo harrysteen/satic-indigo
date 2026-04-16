@@ -29,7 +29,7 @@ export default function Hero3Content() {
           }}
         >
           <Image 
-            src="/imges/home/indigo story/1478842f-5e63-4601-bc2a-863f8e97d548 1.webp" 
+            src="/imges/home/indigo story/indigoexterior.png" 
             alt="Indigo Restaurant Story" 
             fill 
             className="object-cover"

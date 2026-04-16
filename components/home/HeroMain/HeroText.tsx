@@ -19,7 +19,7 @@ const BigLogo = () => (
 
 export default function HeroText() {
   return (
-    <div className="relative z-20 flex flex-col items-center text-center px-4 w-full max-w-5xl mt-0 md:mt-8 lg:mt-12 font-sans">
+    <div className="relative z-20 flex flex-col items-center text-center px-4 w-full max-w-5xl mt-30 md:mt-20 lg:mt-28 font-sans">
       <BigLogo />
 
       <h1 className="text-brand-white md:text-brand-blue text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-el-messiri mt-0 tracking-wide leading-tight uppercase">
