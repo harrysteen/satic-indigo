@@ -10,7 +10,9 @@ export default function NavButtons() {
         Reserve a table
       </Link>
       <Link
-        href="/order"
+        href="https://indigo-indian-restaurant-rosenberg.cloveronline.com/menu/all"
+        target="_blank"
+        rel="noopener noreferrer"
         className="bg-brand-white text-brand-blue border-[1.2px] border-brand-blue w-[184.05px] h-[43.36px] flex items-center justify-center rounded-[5.33px] font-medium text-[17px] transition-all duration-300 hover:bg-brand-blue/5 outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 overflow-hidden whitespace-nowrap"
       >
         Order now

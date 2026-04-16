@@ -11,7 +11,7 @@ const links = [
   { href: "/contact", label: "Connect" },
   { href: "/careers", label: "Careers" },
   { href: "/contact#reservation", label: "Reserve a Table" },
-  { href: "/order", label: "Order Now" },
+  { href: "https://indigo-indian-restaurant-rosenberg.cloveronline.com/menu/all", label: "Order Now", external: true },
 ];
 
 export default function MobileMenu() {
@@ -48,6 +48,8 @@ export default function MobileMenu() {
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className={`block px-4 py-3 font-medium text-base rounded-xl transition-colors ${
                     pathname === link.href
                       ? "bg-[#20064A] text-white"
