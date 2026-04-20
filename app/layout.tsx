@@ -38,7 +38,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${plusJakartaSans.variable} ${geistMono.variable} ${elMessiri.variable} h-full antialiased`}
     >
-      <body 
+      <body
         className="font-sans min-h-full flex flex-col bg-white text-[#20064A]"
         suppressHydrationWarning
       >

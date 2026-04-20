@@ -21,11 +21,11 @@ export default function HeroBackground({ children }: Readonly<{ children: React.
   });
 
   // Scale: Starts expanding once the video is established
-  const scale = useTransform(scrollYProgress, [0.3, 0.9], [1, 2.5]);
-  
+  const scale = useTransform(scrollYProgress, [0.1, 0.9], [1, 2.5]);
+
   // Opacity: Text fades out elegantly as the video appears
   const textOpacity = useTransform(scrollYProgress, [0.05, 0.2], [1, 0]);
-  
+
   // Opacity: Masked video appears immediately after text is gone
   const videoOpacity = useTransform(scrollYProgress, [0.05, 0.2], [0, 1]);
 
@@ -38,97 +38,109 @@ export default function HeroBackground({ children }: Readonly<{ children: React.
   return (
     <div ref={containerRef} className={`relative w-full bg-[#20074A] ${isMobile ? "h-[100svh]" : "h-[400vh]"}`}>
       <div className={`w-full overflow-hidden flex flex-col items-center ${isMobile ? "relative h-full" : "sticky top-0 h-screen"}`}>
-        
+
+        {/* Main Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/kumar-images/homeherobg.png"
+            alt="Background"
+            fill
+            className="object-cover object-center opacity-80"
+            priority
+          />
+        </div>
+
+
         {/* Subtle Static Pattern Overlay */}
-        <div 
-          className="absolute inset-0 pointer-events-none opacity-[0.05] z-0" 
-          style={{ 
-            backgroundImage: `url("/logo/logoiconwhite.png")`, 
-            backgroundSize: '120px', 
+        {/* <div
+          className="absolute inset-0 pointer-events-none opacity-[0.05] z-0"
+          style={{
+            backgroundImage: `url("/logo/logoiconwhite.png")`,
+            backgroundSize: '120px',
             backgroundRepeat: 'repeat'
           }}
-        />
+        /> */}
 
         {/* Main Animated Shape Container */}
-        <div className="relative w-full flex-grow flex flex-col justify-center items-center">
-          <motion.div 
+        <div className="relative w-full flex-grow flex flex-col justify-center items-center pointer-events-none">
+          <motion.div
             style={isMobile ? { scale: 1 } : { scale }}
-            className="relative w-full h-[100svh] md:w-[100vw] md:h-screen flex items-center justify-center transition-shadow duration-500"
+            className="relative w-full h-[100svh] md:w-full md:h-screen flex items-center justify-center transition-shadow duration-500"
           >
-                  {/* Unified Shape & Content Container */}
-                  <div className="relative w-full h-full max-w-[1900px] mx-auto scale-100 sm:scale-[1.25] md:scale-[1.12] origin-bottom">
-                      
-                      {/* 1. Background Visual Frame */}
-                      <motion.div 
-                        style={isMobile ? { opacity: 1 } : { opacity: frameOpacity }}
-                        className="hidden md:block absolute inset-0 z-0"
-                      >
-                          <Image
-                              src="/PNGS/Subtractshape.webp"
-                              alt="Hero Background Shape"
-                              fill
-                              className="object-contain object-bottom"
-                              style={{ 
-                                  filter: 'drop-shadow(0 -2px 0 #DFAB40) drop-shadow(2px 0 0 #DFAB40) drop-shadow(-2px 0 0 #DFAB40)'
-                              }}
-                              priority
-                          />
-                      </motion.div>
+            {/* Unified Shape & Content Container */}
+            <div className="relative w-full h-full max-w-[1900px] mx-auto scale-100 sm:scale-[1.25] md:scale-[1.12] origin-bottom">
 
-                      {/* 2. Masked Video - Using the same logic and div structure */}
-                      <motion.div 
-                         style={{ 
-                            opacity: videoOpacity,
-                            maskImage: 'url("/PNGS/Subtractshape.webp")',
-                            WebkitMaskImage: 'url("/PNGS/Subtractshape.webp")',
-                            maskSize: 'contain',
-                            WebkitMaskSize: 'contain',
-                            maskRepeat: 'no-repeat',
-                            WebkitMaskRepeat: 'no-repeat',
-                            maskPosition: 'bottom center',
-                            WebkitMaskPosition: 'bottom center',
-                         }}
-                         className="hidden sm:block absolute inset-0 z-10 w-full h-full pointer-events-none"
-                      >
-                          <video 
-                              autoPlay 
-                              loop 
-                              muted 
-                              playsInline 
-                              className="w-full h-full object-cover"
-                          >
-                              <source src="/introvidoe.MP4" type="video/mp4" />
-                          </video>
-                      </motion.div>
+              {/* 1. Background Visual Frame */}
+              <motion.div
+                style={isMobile ? { opacity: 1 } : { opacity: frameOpacity }}
+                className="hidden md:block absolute inset-0 z-0"
+              >
+                <Image
+                  src="/PNGS/Subtractshape.webp"
+                  alt="Hero Background Shape"
+                  fill
+                  className="object-contain object-bottom"
+                  style={{
+                    filter: 'drop-shadow(0 -2px 0 #DFAB40) drop-shadow(2px 0 0 #DFAB40) drop-shadow(-2px 0 0 #DFAB40)'
+                  }}
+                  priority
+                />
+              </motion.div>
 
-                      {/* 2.5 Fullscreen Unmasked Video (Desktop Only) to fill screen after scroll */}
-                      <motion.div 
-                         style={{ 
-                            opacity: isMobile ? 0 : fullVideoOpacity,
-                         }}
-                         className="hidden sm:block absolute inset-0 z-15 w-[100vw] h-[100vh] fixed top-0 left-0 pointer-events-none"
-                      >
-                          <video 
-                              autoPlay 
-                              loop 
-                              muted 
-                              playsInline 
-                              className="w-full h-full object-cover"
-                          >
-                              <source src="/introvidoe.MP4" type="video/mp4" />
-                          </video>
-                      </motion.div>
+              {/* 2. Masked Video - Using the same logic and div structure */}
+              <motion.div
+                style={{
+                  opacity: videoOpacity,
+                  maskImage: 'url("/PNGS/Subtractshape.webp")',
+                  WebkitMaskImage: 'url("/PNGS/Subtractshape.webp")',
+                  maskSize: 'contain',
+                  WebkitMaskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskPosition: 'bottom center',
+                  WebkitMaskPosition: 'bottom center',
+                }}
+                className="hidden sm:block absolute inset-0 z-10 w-full h-full pointer-events-none"
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/introvidoe.MP4" type="video/mp4" />
+                </video>
+              </motion.div>
 
-                      {/* 3. Text Overlay - Inside the scaled shape container - Adjusted down slightly */}
-                      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none pt-12 md:pt-20">
-                          <motion.div 
-                            style={{ opacity: textOpacity }}
-                            className="relative w-full flex flex-col items-center pointer-events-auto"
-                          >
-                              {children}
-                          </motion.div>
-                      </div>
-                  </div>
+              {/* 2.5 Fullscreen Unmasked Video (Desktop Only) to fill screen after scroll */}
+              <motion.div
+                style={{
+                  opacity: isMobile ? 0 : fullVideoOpacity,
+                }}
+                className="hidden sm:block absolute inset-0 z-15 w-full h-[100vh] fixed top-0 left-0 pointer-events-none"
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/introvidoe.MP4" type="video/mp4" />
+                </video>
+              </motion.div>
+
+              {/* 3. Text Overlay - Inside the scaled shape container - Adjusted down slightly */}
+              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none pt-12 md:pt-20">
+                <motion.div
+                  style={{ opacity: textOpacity }}
+                  className="relative w-full flex flex-col items-center pointer-events-auto"
+                >
+                  {children}
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

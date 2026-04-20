@@ -15,7 +15,7 @@ interface MenuSignatureCardProps {
 export default function MenuSignatureCard({ date, event, time, description, buttonText, image, highlights = [] }: MenuSignatureCardProps) {
 
   return (
-    <div className="flex flex-col group h-full border border-[#DFAB40] bg-[#20064A] overflow-hidden shadow-xl max-w-[380px] mx-auto">
+    <div className="flex flex-col group h-full border border-[#DFAB40] bg-[#20064A] overflow-hidden shadow-xl w-full md:max-w-[563px] mx-auto">
       {/* Top Part: Image with Overlays */}
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
@@ -52,20 +52,19 @@ export default function MenuSignatureCard({ date, event, time, description, butt
 
         {/* Menu Highlights Section */}
         <div className="w-full flex flex-col items-center mb-6">
-           <span className="text-[#20064A] text-[10px] font-extrabold uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-             <span className="w-4 h-px bg-[#DFAB40]" />
-             Menu Highlights
-             <span className="w-4 h-px bg-[#DFAB40]" />
+           <span className="text-[#20064A] text-[11px] font-extrabold tracking-wide mb-1">
+             Menu Highlights:
            </span>
-           <div className="flex flex-wrap justify-center gap-2">
+           <div className="flex flex-wrap justify-center items-center gap-2">
               {highlights.length > 0 ? (
                 highlights.map((h, i) => (
-                  <span key={i} className="bg-[#20064A]/5 text-[#20064A] text-[11px] font-bold px-3 py-1 rounded-full border border-[#20064A]/10 shadow-sm">
-                    {h}
-                  </span>
+                  <React.Fragment key={i}>
+                    <span className="text-[#20064A] text-[11px] md:text-xs">{h}</span>
+                    {i < highlights.length - 1 && <span className="text-[#DFAB40] text-[8px]">✦</span>}
+                  </React.Fragment>
                 ))
               ) : (
-                <span className="text-[#20064A]/40 text-[10px] italic">Premium selection including Chef's specials</span>
+                <span className="text-[#20064A]/50 italic text-xs">Premium selection</span>
               )}
            </div>
         </div>

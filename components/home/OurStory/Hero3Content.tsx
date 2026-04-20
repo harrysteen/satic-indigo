@@ -21,10 +21,10 @@ export default function Hero3Content() {
         <div 
           className="relative w-full max-w-[650px] aspect-[4/3] overflow-hidden"
           style={{ 
-            // Masking the LEFT and BOTTOM edges to blend into the white background
-            maskImage: 'linear-gradient(to right, transparent 0%, black 15%), linear-gradient(to top, transparent 0%, black 15%)',
+            // Masking all harsh edges to blend flawlessly into the white background
+            maskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 85%, transparent 100%), linear-gradient(to top, transparent 0%, black 15%, black 90%, transparent 100%)',
             maskComposite: 'intersect',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%), linear-gradient(to top, transparent 0%, black 10%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 85%, transparent 100%), linear-gradient(to top, transparent 0%, black 15%, black 90%, transparent 100%)',
             WebkitMaskComposite: 'source-in'
           }}
         >

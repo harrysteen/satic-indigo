@@ -4,12 +4,12 @@ import Link from "next/link";
 export default function Hero7Content() {
   return (
     <div className="flex flex-col items-center w-full text-center">
-      <h2 className="text-white text-4xl md:text-[44px] lg:text-[50px] font-el-messiri tracking-[0.02em] font-medium mb-6">
+      <h2 className="text-white text-4xl md:text-[44px] lg:text-[50px] font-el-messiri tracking-[0.02em] font-medium mb-0 md:mb-1">
         Catering by INDIGO
       </h2>
       
       {/* Decorative Gold Divider */}
-      <div className="flex items-center justify-center w-full max-w-[500px] mb-8">
+      <div className="flex items-center justify-center w-full max-w-[500px] my-3 md:my-4">
         <div className="flex-1 w-full bg-gradient-to-r from-transparent to-[#DFAB40] h-[1px]"></div>
         <div className="mx-4">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -19,12 +19,12 @@ export default function Hero7Content() {
         <div className="flex-1 w-full bg-gradient-to-l from-transparent to-[#DFAB40] h-[1px]"></div>
       </div>
 
-      <p className="text-[#D8A131] font-semibold text-lg md:text-[21px] font-sans tracking-wide max-w-3xl mb-8">
+      <p className="text-[#D8A131] font-semibold text-lg md:text-[21px] font-sans tracking-wide max-w-3xl mb-5 md:mb-6 mt-1 md:mt-2">
         To take our taste beyond our space, we take on catering requests for events of all types.
       </p>
       
       {/* Features List */}
-      <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-4 md:gap-x-6 text-white text-base md:text-lg font-medium font-sans mb-12">
+      <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-4 md:gap-x-6 text-white text-base md:text-lg font-medium font-sans mb-8">
         <span>Custom menus</span>
         <span className="text-[#DFAB40]">✦</span>
         <span>Halal-friendly options</span>

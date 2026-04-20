@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import MainDivider from "../../decorations/MainDivider";
+import MainDivider from "../../decorations/MainDivider"; 
 
 const BigLogo = () => (
-  <div className="flex flex-col items-center mb-0 pt-4 md:pt-8 lg:pt-12">
-    <div className="relative w-[280px] h-[100px] sm:w-[340px] sm:h-[120px] md:w-[440px] md:h-[150px] lg:w-[480px] lg:h-[160px]">
+  <div className="flex flex-col items-center mb-0 pt-2 md:pt-4 lg:pt-6">
+    <div className="relative w-[240px] h-[80px] sm:w-[300px] sm:h-[100px] md:w-[380px] md:h-[130px] lg:w-[420px] lg:h-[140px]">
       <Image
         src="/PNGS/LOGO.png"
         alt="INDIGO"
@@ -19,20 +19,20 @@ const BigLogo = () => (
 
 export default function HeroText() {
   return (
-    <div className="relative z-20 flex flex-col items-center text-center px-4 w-full max-w-5xl mt-30 md:mt-20 lg:mt-28 font-sans">
+    <div className="relative z-20 flex flex-col items-center text-center px-4 w-full max-w-5xl mt-16 md:mt-12 lg:mt-16 font-sans">
       <BigLogo />
 
-      <h1 className="text-brand-white md:text-brand-blue text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-el-messiri mt-0 tracking-wide leading-tight uppercase">
+      <h1 className="text-brand-white md:text-brand-blue text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-el-messiri mt-0 tracking-wide leading-tight uppercase">
         INDO PAK RESTAURANT
       </h1>
 
       <MainDivider />
 
-      <h3 className="text-brand-white md:text-brand-blue text-lg sm:text-xl md:text-2xl font-el-messiri font-medium mb-4">
+      <h3 className="text-brand-white md:text-brand-blue text-lg sm:text-xl md:text-2xl font-el-messiri font-medium mb-3">
         Namaste. Khushamdeed.
       </h3>
 
-      <p className="text-white md:text-brand-maroon text-sm sm:text-base md:text-lg max-w-2xl font-medium mb-10 leading-relaxed px-4 opacity-100 md:opacity-90">
+      <p className="text-white md:text-brand-maroon text-sm sm:text-base md:text-lg max-w-2xl font-medium mb-6 leading-relaxed px-4 opacity-100 md:opacity-90">
         We welcome you to experience the tantalising flavours and warm
         hospitality from the spice lands to the east.
       </p>

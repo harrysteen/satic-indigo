@@ -4,7 +4,7 @@ import WhitePetals from "../../decorations/WhitePetals";
 
 export default function CateringCTABackground({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <section className="relative w-full py-24 md:py-32 flex flex-col items-center overflow-hidden">
+    <section className="relative w-full py-12 md:py-16 flex flex-col items-center overflow-hidden">
       
       {/* Heavy Image Background Base */}
       <div className="absolute inset-0 z-0">
@@ -15,9 +15,9 @@ export default function CateringCTABackground({ children }: Readonly<{ children:
           className="object-cover object-center"
           priority
         />
-        {/* Dark Deep Violet Heavy Overlay to knock the image back into a texture */}
-        <div className="absolute inset-0 bg-[#20064A] opacity-85 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-[#20064A] opacity-75" />
+        {/* Lighter Violet Overlay to allow the food image to vividly shine through */}
+        <div className="absolute inset-0 bg-[#20064A] opacity-40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-[#20064A] opacity-60" />
       </div>
       
       {/* Corner Decorations - Refined size */}

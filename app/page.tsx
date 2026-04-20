@@ -20,7 +20,7 @@ export default function Home() {
       
       <BrandEssence />
       
-      <OurStory />
+      <OurStory />  
       
       <InteriorGallery />
       

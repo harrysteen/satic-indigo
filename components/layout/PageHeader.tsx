@@ -10,10 +10,10 @@ export default function PageHeader({ topTitle, title, subtitle }: PageHeaderProp
   return (
     <section className="relative w-full pt-32 pb-20 bg-white flex flex-col items-center overflow-hidden">
       {/* Side Decorations */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-64 h-auto opacity-30 pointer-events-none select-none -translate-x-1/2">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[150px] md:w-[250px] lg:w-[320px] h-auto opacity-100 pointer-events-none select-none">
           <img src="/PNGS/half-flower.png" alt="" className="w-full h-auto object-contain" />
       </div>
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 md:w-64 h-auto opacity-30 pointer-events-none select-none translate-x-1/2">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[150px] md:w-[250px] lg:w-[320px] h-auto opacity-100 pointer-events-none select-none">
           <img src="/PNGS/half-flower.png" alt="" className="w-full h-auto object-contain scale-x-[-1]" />
       </div>
 
@@ -24,18 +24,18 @@ export default function PageHeader({ topTitle, title, subtitle }: PageHeaderProp
           </h2>
         )}
         
-        <h1 className={`${topTitle ? 'text-5xl md:text-8xl' : 'text-4xl md:text-6xl'} text-[#20064A] font-el-messiri tracking-[0.2em] uppercase mb-6 leading-tight`}>
+        <h1 className={`${topTitle ? 'text-5xl md:text-8xl' : 'text-4xl md:text-6xl'} text-[#20064A] font-el-messiri tracking-[0.2em] uppercase mb-2 md:mb-3 leading-tight`}>
           {title}
         </h1>
         
         {/* Custom Gold Divider */}
-        <div className="flex items-center w-full max-w-[300px] mb-8">
+        <div className="flex items-center w-full max-w-[300px] mb-3 md:mb-4">
           <div className="flex-1 h-[1.5px] bg-[#DFAB40]/60" />
           <div className="mx-3 text-[#DFAB40]">✦</div>
           <div className="flex-1 h-[1.5px] bg-[#DFAB40]/60" />
         </div>
 
-        <p className="text-[#20064A]/60 text-sm md:text-base font-medium max-w-xl leading-relaxed font-el-messiri">
+        <p className="text-[#2C0074] text-[18px] md:text-[26.67px] font-semibold leading-normal md:leading-[37.33px] tracking-[0.02em] font-sans max-w-3xl px-4">
           {subtitle}
         </p>
       </div>

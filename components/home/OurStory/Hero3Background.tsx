@@ -6,7 +6,7 @@ export default function OurStoryBackground({ children }: Readonly<{ children: Re
     <section className="relative w-full bg-[#fafafa] py-16 md:py-24 flex flex-col items-center overflow-hidden">
       
       {/* Corner Decorations - Violet Flowers */}
-      <VioletPetals position="top-right" className="top-[-4px] right-[-4px] scale-y-[-1]" rotation="-rotate-90" />
+      <VioletPetals position="top-right" className="top-[-4px] right-[-4px]" />
       <VioletPetals position="bottom-left" className="bottom-[-4px] left-[-4px]" />
 
       {/* Main Content constraints */}

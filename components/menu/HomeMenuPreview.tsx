@@ -8,17 +8,19 @@ import MainDivider from "../decorations/MainDivider";
 
 export default function HomeMenuPreview() {
   return (
-    <section className="relative w-full py-20 md:py-32 bg-[#fafafa] flex flex-col items-center font-sans overflow-hidden">
+    <section className="relative w-full py-10 md:py-16 bg-[#fafafa] flex flex-col items-center font-sans overflow-hidden">
+      
+      {/* Top Container (Constrained) */}
       <div className="max-w-[1400px] w-full px-4 flex flex-col items-center relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-12 md:mb-16 flex flex-col items-center">
-          <h2 className="text-brand-blue text-3xl md:text-5xl font-el-messiri mb-6 tracking-wide">
+        <div className="text-center mb-6 md:mb-8 flex flex-col items-center">
+          <h2 className="text-brand-blue text-3xl md:text-5xl font-el-messiri mb-0 md:mb-1 tracking-wide">
             Most Loved, Freshly Served
           </h2>
           
-          <MainDivider />
+          <MainDivider className="!my-3 md:!my-4" />
           
-          <h3 className="text-brand-yellow font-bold text-base md:text-lg mb-4 uppercase tracking-widest font-el-messiri">
+          <h3 className="text-brand-yellow font-bold text-base md:text-lg mt-0 mb-2 uppercase tracking-widest font-el-messiri">
             Khana-E-Lazeez: Most Loved by our Patrons
           </h3>
           
@@ -26,54 +28,56 @@ export default function HomeMenuPreview() {
              Packed with titillating flavour bursts, these dishes keep everyone coming back for more.
           </p>
         </div>
+      </div>
 
-        {/* Infinite Scrolling Ribbon */}
-        <div className="w-full overflow-hidden mb-20 relative group">
-          
-          <div className="flex animate-scroll-right-to-left whitespace-nowrap py-10">
-            {/* Doubling the data for a seamless loop */}
-            {[...SPECIALS_DATA, ...SPECIALS_DATA].map((item, idx) => (
-              <div 
-                key={`${item.id}-${idx}`} 
-                className="inline-flex flex-col w-[280px] md:w-[350px] mx-4 md:mx-6 group/item cursor-pointer"
-              >
-                <div className="relative w-full aspect-[4/3] overflow-hidden mb-6 border-[6px] md:border-[8px] border-white shadow-xl transition-transform duration-500 group-hover/item:shadow-2xl">
-                  <Image
-                    src={item.image || "/menu/default.png"}
-                    alt={item.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover/item:scale-110"
-                    sizes="(max-width: 768px) 300px, 400px"
-                  />
-                </div>
-                <h4 className="text-brand-maroon font-el-messiri text-lg md:text-xl text-center mb-2 uppercase tracking-widest">
-                  {item.name}
-                </h4>
-                <p className="text-brand-blue/80 text-xs md:text-sm text-center font-medium px-4 whitespace-normal line-clamp-2">
-                  {item.description}
-                </p>
+      {/* Infinite Scrolling Ribbon - NOW FULL BROWSER WIDTH */}
+      <div className="w-full overflow-hidden mb-0 relative group">
+        <div className="flex animate-scroll-right-to-left whitespace-nowrap py-4">
+          {/* Doubling the data for a seamless loop */}
+          {[...SPECIALS_DATA, ...SPECIALS_DATA].map((item, idx) => (
+            <div 
+              key={`${item.id}-${idx}`} 
+              className="inline-flex flex-col w-[280px] md:w-[350px] mx-4 md:mx-6 group/item cursor-pointer bg-white border border-[#D4AF37] p-4 md:p-6 transition-all hover:shadow-xl"
+            >
+              <div className="relative w-full aspect-[4/3] overflow-hidden mb-6">
+                <Image
+                  src={item.image || "/menu/default.png"}
+                  alt={item.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover/item:scale-105"
+                  sizes="(max-width: 768px) 300px, 400px"
+                />
               </div>
-            ))}
-          </div>
+              <h4 className="text-[#B64D3F] font-el-messiri text-lg md:text-xl text-center mb-3 uppercase tracking-widest font-semibold">
+                {item.name}
+              </h4>
+              <p className="text-[#362A5A] text-xs md:text-sm text-center font-semibold px-2 whitespace-normal line-clamp-3 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <style jsx global>{`
-          @keyframes scroll-right-to-left {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-scroll-right-to-left {
-            animation: scroll-right-to-left 40s linear infinite;
-            width: max-content;
-          }
-          .animate-scroll-right-to-left:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
+      <style jsx global>{`
+        @keyframes scroll-direction {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0%); }
+        }
+        .animate-scroll-right-to-left {
+          animation: scroll-direction 40s linear infinite;
+          width: max-content;
+        }
+        .animate-scroll-right-to-left:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
 
+      {/* Bottom Container (Constrained) */}
+      <div className="max-w-[1400px] w-full px-4 flex flex-col items-center relative z-10">
         {/* Footer of section */}
-        <div className="flex flex-col items-center relative w-full">
-            <p className="text-brand-yellow font-bold text-lg md:text-xl mb-10 font-el-messiri">
+        <div className="flex flex-col items-center relative w-full mt-2 md:mt-4">
+            <p className="text-brand-yellow font-bold text-lg md:text-xl mb-3 font-el-messiri">
                 There&apos;s more to discover in every flavor we serve.
             </p>
             

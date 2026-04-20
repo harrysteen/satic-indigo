@@ -165,31 +165,31 @@ export const SIGNATURE_DATA = [
   {
     id: "si1",
     date: "04 Mar",
-    event: "KHUSHIYALI NIGHT",
-    time: "7:00 PM – 10:30 PM",
-    description: "Live Music performance with special delicacies.",
-    highlights: ["Live Gazals", "Mughlai Platter", "Royal Ambience"],
-    buttonText: "Bоок Now",
-    image: "/menu/signature1.png"
+    event: "MIDWEEK GRILL NIGHT",
+    time: "7:30 PM – 10:30 PM",
+    description: "Live grills + curated platters",
+    highlights: ["Skewers", "BBQ Chicken"],
+    buttonText: "Reserve Now",
+    image: "/kumar-images/midweek-grill.jpg"
   },
   {
     id: "si2",
     date: "08 Mar",
-    event: "FLAVOURS OF PUNJAB",
+    event: "INDIGO CULTURAL NIGHT",
     time: "8:00 PM onwards",
-    description: "Authentic Punjabi Buffet with unlimited drinks.",
-    highlights: ["Clay Oven Tandoori", "Amritsari Kulcha", "Lassi Bar"],
-    buttonText: "Bоок Now",
-    image: "/menu/signature2.png"
+    description: "Traditional ambiance + live music",
+    highlights: ["Slow Cooked Curries", "Dum Biryani", "Saffron Desserts"],
+    buttonText: "Reserve Now",
+    image: "/kumar-images/indigo-culter.jpg"
   },
   {
     id: "si3",
     date: "10 Mar",
-    event: "SUNDAY BRUNCH",
-    time: "1:00 PM onwards",
-    description: "Experience the ultimate brunch with over 50 items.",
-    highlights: ["50+ Multi-cuisine items", "Live Dosa Station", "Unlimited Mimosas"],
-    buttonText: "Bоок Now",
-    image: "/menu/signature3.png"
+    event: "INDIGO CHAAT EXPERIENCE",
+    time: "7:00 PM onwards",
+    description: "Street-style favorites with a refined twist",
+    highlights: ["Pani Puri", "Dahi Papdi", "Sev Puri"],
+    buttonText: "Reserve Now",
+    image: "/kumar-images/indigo-chat.jpg"
   }
 ];
