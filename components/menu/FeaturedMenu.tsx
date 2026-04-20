@@ -50,7 +50,7 @@ export default function FeaturedMenu() {
             <button className="w-2.5 h-2.5 rounded-full bg-gray-200" />
         </div>
       </div>
-
+   
       {/* 3. The Interactive Menu Tab Section */}
       <div className="w-full bg-white relative pb-10 md:pb-16 overflow-hidden">
         {/* Side Decorations */}

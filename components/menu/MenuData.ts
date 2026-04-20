@@ -17,7 +17,7 @@ export const MENU_CATEGORIES = [
   "APPETIZERS",
   "SOUPS & SALADS",
   "MAIN COURSE",
-  "CURRIES",
+  "CURRIES",   
   "BREADS",
   "DESSERTS",
   "BEVERAGES"
