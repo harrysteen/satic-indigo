@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <HeroMain />
-      
+        
       {/* Section 2 - Most Loved Menu Preview */}
       <div className="w-full bg-white relative">
         <HomeMenuPreview />
@@ -34,3 +34,5 @@ export default function Home() {
     </div>
   );
 }
+
+

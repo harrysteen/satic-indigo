@@ -16,14 +16,18 @@ export default function MenuOfferCard({ tag, title, description }: MenuOfferCard
       />
 
       <div className="relative z-10 flex flex-col items-start h-full justify-center">
-        <span className="text-white/90 text-sm md:text-base font-sans font-medium mb-3">
+        <span className="text-white/90 text-sm md:text-base font-el-messiri tracking-wide mb-2">
           {tag}
         </span>
         
-        {/* Short Gold Divider */}
-        <div className="w-[100px] h-[1.5px] bg-[#DFAB40] mb-5" />
+        {/* Diamond Line Divider */}
+        <div className="flex items-center w-[80px] mb-4">
+           <div className="flex-1 h-[1.5px] bg-[#DFAB40]" />
+           <div className="mx-1 transform rotate-45 w-[4px] h-[4px] bg-[#DFAB40]" />
+           <div className="flex-1 h-[1.5px] bg-[#DFAB40]" />
+        </div>
         
-        <h3 className="text-[20px] md:text-[24px] text-[#DFAB40] font-serif tracking-wider uppercase mb-5">
+        <h3 className="text-[20px] md:text-[24px] text-[#DFAB40] font-serif tracking-wide uppercase mb-4">
           {title}
         </h3>
         

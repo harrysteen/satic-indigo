@@ -2,9 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function HeroBackground({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function HeroBackground({
+  children,
+  isPlaying = false,
+  onClose
+}: Readonly<{ children: React.ReactNode, isPlaying?: boolean, onClose?: () => void }>) {
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -14,30 +18,25 @@ export default function HeroBackground({ children }: Readonly<{ children: React.
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  // Scale: Starts expanding once the video is established
-  const scale = useTransform(scrollYProgress, [0.1, 0.9], [1, 2.5]);
-
-  // Opacity: Text fades out elegantly as the video appears
-  const textOpacity = useTransform(scrollYProgress, [0.05, 0.2], [1, 0]);
-
-  // Opacity: Masked video appears immediately after text is gone
-  const videoOpacity = useTransform(scrollYProgress, [0.05, 0.2], [0, 1]);
-
-  // Opacity: The golden frame fades away as we scroll deeper
-  const frameOpacity = useTransform(scrollYProgress, [0.3, 0.6], [1, 0]);
-
-  // Opacity: A fullscreen UNMASKED video crossfades in to fill the entire section
-  const fullVideoOpacity = useTransform(scrollYProgress, [0.4, 0.8], [0, 1]);
-
   return (
-    <div ref={containerRef} className={`relative w-full bg-[#20074A] ${isMobile ? "h-[100svh]" : "h-[400vh]"}`}>
-      <div className={`w-full overflow-hidden flex flex-col items-center ${isMobile ? "relative h-full" : "sticky top-0 h-screen"}`}>
+    <div className={`relative w-full bg-[#20074A] ${isMobile ? "h-[100svh]" : "h-screen"}`}>
+      <div className="w-full h-full overflow-hidden flex flex-col items-center relative">
+
+        {/* Close Button when playing */}
+        {isPlaying && onClose && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            onClick={onClose}
+            className="absolute top-6 right-6 md:top-10 md:right-10 z-50 bg-black/50 hover:bg-black/80 text-white rounded-full p-3 backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue"
+            aria-label="Close video"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </motion.button>
+        )}
 
         {/* Main Background Image */}
         <div className="absolute inset-0 z-0">
@@ -50,29 +49,22 @@ export default function HeroBackground({ children }: Readonly<{ children: React.
           />
         </div>
 
-
-        {/* Subtle Static Pattern Overlay */}
-        {/* <div
-          className="absolute inset-0 pointer-events-none opacity-[0.05] z-0"
-          style={{
-            backgroundImage: `url("/logo/logoiconwhite.png")`,
-            backgroundSize: '120px',
-            backgroundRepeat: 'repeat'
-          }}
-        /> */}
-
         {/* Main Animated Shape Container */}
         <div className="relative w-full flex-grow flex flex-col justify-center items-center pointer-events-none">
           <motion.div
-            style={isMobile ? { scale: 1 } : { scale }}
+            initial={false}
+            animate={{ scale: isMobile ? 1 : (isPlaying ? 2.5 : 1) }}
+            transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
             className="relative w-full h-[100svh] md:w-full md:h-screen flex items-center justify-center transition-shadow duration-500"
           >
             {/* Unified Shape & Content Container */}
-            <div className="relative w-full h-full max-w-[1900px] mx-auto scale-100 sm:scale-[1.25] md:scale-[1.12] origin-bottom">
+            <div className="relative w-full h-full max-w-[1900px] mx-auto scale-90 sm:scale-100 md:scale-[0.95] origin-bottom">
 
               {/* 1. Background Visual Frame */}
               <motion.div
-                style={isMobile ? { opacity: 1 } : { opacity: frameOpacity }}
+                initial={false}
+                animate={{ opacity: isMobile ? 1 : (isPlaying ? 0 : 1) }}
+                transition={{ duration: 0.8 }}
                 className="hidden md:block absolute inset-0 z-0"
               >
                 <Image
@@ -87,10 +79,13 @@ export default function HeroBackground({ children }: Readonly<{ children: React.
                 />
               </motion.div>
 
-              {/* 2. Masked Video - Using the same logic and div structure */}
+              {/* 2. Masked Video - Immediately visible inside the arch when playing (DISABLED FOR NOW) */}
+              {/*
               <motion.div
+                initial={false}
+                animate={{ opacity: isPlaying ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
                 style={{
-                  opacity: videoOpacity,
                   maskImage: 'url("/PNGS/Subtractshape.webp")',
                   WebkitMaskImage: 'url("/PNGS/Subtractshape.webp")',
                   maskSize: 'contain',
@@ -112,12 +107,14 @@ export default function HeroBackground({ children }: Readonly<{ children: React.
                   <source src="/introvidoe.MP4" type="video/mp4" />
                 </video>
               </motion.div>
+              */}
 
-              {/* 2.5 Fullscreen Unmasked Video (Desktop Only) to fill screen after scroll */}
+              {/* 2.5 Fullscreen Unmasked Video (Desktop Only) to fill screen flawlessly once scale reaches 2.5 (DISABLED FOR NOW) */}
+              {/*
               <motion.div
-                style={{
-                  opacity: isMobile ? 0 : fullVideoOpacity,
-                }}
+                initial={false}
+                animate={{ opacity: (isMobile || !isPlaying) ? 0 : 1 }}
+                transition={{ duration: 1, delay: 0.8 }} // Delay allows the scale to happen first using the masked version
                 className="hidden sm:block absolute inset-0 z-15 w-full h-[100vh] fixed top-0 left-0 pointer-events-none"
               >
                 <video
@@ -130,11 +127,14 @@ export default function HeroBackground({ children }: Readonly<{ children: React.
                   <source src="/introvidoe.MP4" type="video/mp4" />
                 </video>
               </motion.div>
+              */}
 
-              {/* 3. Text Overlay - Inside the scaled shape container - Adjusted down slightly */}
+              {/* 3. Text Overlay - Inside the scaled shape container */}
               <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none pt-12 md:pt-20">
                 <motion.div
-                  style={{ opacity: textOpacity }}
+                  initial={false}
+                  animate={{ opacity: isPlaying ? 0 : 1 }}
+                  transition={{ duration: 0.4 }}
                   className="relative w-full flex flex-col items-center pointer-events-auto"
                 >
                   {children}

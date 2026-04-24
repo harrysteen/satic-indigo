@@ -7,9 +7,12 @@ const links = [
   { href: "/menu", label: "Menu" },
   { href: "/events", label: "Events" },
   { href: "/catering", label: "Catering" },
-  { href: "/contact", label: "Connect" },
+  { href: "/contact", label: "Contact Us"},
   { href: "/careers", label: "Careers" },
 ];
+
+
+
 
 export default function NavLinks() {
   const pathname = usePathname();

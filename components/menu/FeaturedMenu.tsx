@@ -16,12 +16,24 @@ import MenuHeader from "./MenuHeader";
 import PageHeader from "../layout/PageHeader";
 
 export default function FeaturedMenu() {
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselRef = React.useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = React.useState(0);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
-    if (carouselRef.current) {
-      const scrollAmount = direction === 'left' ? -400 : 400; // scroll by roughly one card width
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    if (direction === 'left') {
+      const nextSlide = Math.max(0, activeSlide - 1);
+      setActiveSlide(nextSlide);
+      if (carouselRef.current) {
+        const scrollWidth = window.innerWidth >= 768 ? 424 : window.innerWidth * 0.85 + 16;
+        carouselRef.current.scrollTo({ left: nextSlide * scrollWidth, behavior: 'smooth' });
+      }
+    } else {
+      const nextSlide = Math.min(4, activeSlide + 1);
+      setActiveSlide(nextSlide);
+      if (carouselRef.current) {
+        const scrollWidth = window.innerWidth >= 768 ? 424 : window.innerWidth * 0.85 + 16;
+        carouselRef.current.scrollTo({ left: nextSlide * scrollWidth, behavior: 'smooth' });
+      }
     }
   };
 
@@ -36,10 +48,10 @@ export default function FeaturedMenu() {
       {/* 2. Today's Offers Section (Carousel) */}
       <div className="w-full max-w-[1400px] px-4 mb-8 md:mb-12 relative">
         <div className="flex flex-col items-center mb-10 md:mb-14 px-4">
-          <h3 className="text-[#2C0074] font-el-messiri text-4xl md:text-[56px] font-normal leading-tight md:leading-[77.33px] tracking-[0.02em] uppercase mb-4 text-center">
+          <h3 className="text-3xl md:text-5xl text-[#2C0074] font-el-messiri tracking-[0.1em] leading-tight uppercase mb-4 text-center">
             TODAY&apos;S OFFER
           </h3>
-          <p className="text-[#2C0074]/80 font-sans text-lg md:text-[24px] font-medium leading-snug md:leading-[32px] tracking-[0.02em] text-center max-w-4xl">
+          <p className="text-[18px] font-sans font-medium leading-[40px] tracking-[0.02em] text-center text-[#2C0074]/80 max-w-4xl px-4">
             Thoughtfully crafted for today&apos;s experience, where every bite carries a hint of indulgence.
           </p>
         </div>
@@ -94,7 +106,7 @@ export default function FeaturedMenu() {
       <div className="w-full pt-10 md:pt-16 pb-10 md:pb-16 flex flex-col items-center bg-[#fafafa] overflow-hidden">
         <div className="w-full max-w-[1400px] px-4 flex flex-col items-center relative z-10">
           <div className="text-center mb-8 md:mb-12 flex flex-col items-center">
-            <h3 className="text-[#20064A] font-brolimo text-2xl md:text-4xl uppercase mb-5 tracking-wide">
+            <h3 className="text-3xl md:text-5xl text-[#20064A] font-el-messiri tracking-[0.1em] leading-tight uppercase mb-5 text-center">
               OUR SPECIALS
             </h3>
             {/* Decorative SVG Divider */}
@@ -114,7 +126,7 @@ export default function FeaturedMenu() {
                 <polygon points="400,7.5 260,6 225,6.8 215,7.5 225,8.2 260,9" fill="currentColor" />
               </svg>
             </div>
-            <p className="text-[#2C0074BA] text-[24px] font-normal leading-[40px] tracking-[0.02em] font-sans max-w-4xl text-center px-4">
+            <p className="text-[18px] font-sans font-medium leading-[30px] tracking-[0.02em] text-center text-[#2C0074BA] max-w-4xl px-4">
               Packed with titillating flavour bursts, these dishes keep everyone coming back for more.
             </p>
           </div>
@@ -173,7 +185,7 @@ export default function FeaturedMenu() {
 
         <div className="w-full max-w-[1800px] mx-auto px-4 flex flex-col items-center relative z-10">
           <div className="text-center mb-16 flex flex-col items-center">
-            <h2 className="text-white text-2xl md:text-5xl font-serif mb-4 tracking-wide">Signature Dining Experiences</h2>
+            <h2 className="text-3xl md:text-5xl text-white font-el-messiri tracking-[0.1em] leading-tight uppercase mb-4 text-center">SIGNATURE DINING EXPERIENCES</h2>
 
             {/* Decorative SVG Divider */}
             <div className="flex justify-center w-full max-w-[340px] md:max-w-[420px] mb-8 md:mb-10">
@@ -193,7 +205,7 @@ export default function FeaturedMenu() {
               </svg>
             </div>
 
-            <p className="text-[#FAFAFA] text-[24px] font-bold leading-[40px] tracking-[0.02em] font-sans text-center max-w-4xl px-4">
+            <p className="text-[18px] font-sans font-medium leading-[30px] tracking-[0.02em] text-center text-[#FAFAFA] max-w-4xl px-4">
               Crafted with intention, each evening offers a distinct blend of taste, atmosphere, and storytelling.
             </p>
           </div>

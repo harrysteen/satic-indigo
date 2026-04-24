@@ -7,89 +7,82 @@ import MenuSignatureCard from "../menu/MenuSignatureCard";
 export default function EventsGallery() {
   const [activeCategory, setActiveCategory] = useState("ALL");
 
-  const filteredEvents = activeCategory === "ALL" 
-    ? EVENTS_DATA 
+  const filteredEvents = activeCategory === "ALL"
+    ? EVENTS_DATA
     : EVENTS_DATA.filter(e => e.category === activeCategory);
 
   return (
-    <section className="w-full py-24 md:py-32 bg-[#20064A] relative overflow-hidden">
-      {/* Repeating Logo Pattern Background */}
-      <div 
-          className="absolute inset-0 opacity-[0.04] pointer-events-none" 
-          style={{ 
-              backgroundImage: 'url("/logo/logoicon.png")',
-              backgroundSize: '100px',
-              backgroundRepeat: 'repeat',
-              backgroundPosition: 'center'
-          }}
-      />
+    <section
+      className="w-full py-24 md:py-32 relative overflow-hidden bg-[#20064A] bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/kumar-images/signatur-dining.png')" }}
+    >
 
-      {/* Decorative Flowers in the corners of this section */}
-      <div className="absolute left-0 bottom-0 w-56 md:w-72 h-auto opacity-10 -translate-x-1/2 translate-y-1/2 pointer-events-none">
-          <img src="/PNGS/full-flower.png" alt="" className="w-full h-auto object-contain" />
-      </div>
-      <div className="absolute right-0 bottom-0 w-56 md:w-72 h-auto opacity-10 translate-x-1/2 translate-y-1/2 pointer-events-none">
-          <img src="/PNGS/full-flower.png" alt="" className="w-full h-auto object-contain" />
-      </div>
-      
-      <div className="relative z-10 max-w-[1300px] mx-auto px-4 flex flex-col items-center">
+      <div className="relative z-10 max-w-[1300px] mx-auto flex flex-col items-center">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-            <h3 className="text-white text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-4 opacity-70">Experiences, Curated For You</h3>
-            
-            <h2 className="text-white text-3xl md:text-5xl font-el-messiri tracking-wide mb-8 uppercase">EXPERIENCES, CURATED FOR YOU</h2>
-            
-            {/* Divider */}
-            <div className="flex items-center w-full max-w-[160px] mb-8">
-                <div className="flex-1 h-px bg-[#DFAB40]/40" />
-                <div className="mx-3 text-[#DFAB40] text-[8px]">✦</div>
-                <div className="flex-1 h-px bg-[#DFAB40]/40" />
-            </div>
+        <div className="flex flex-col items-center text-center mb-10 md:mb-12 px-4">
+          <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-el-messiri tracking-wide mb-4 uppercase">EXPERIENCES, CURATED FOR YOU</h2>
 
-            <p className="text-[#DFAB40] font-medium text-sm md:text-lg max-w-2xl leading-relaxed italic opacity-80">
-                Crafted with intention, each evening offers a distinct blend of taste, atmosphere, and storytelling.
-            </p>
+          {/* Decorative SVG Divider */}
+          <div className="flex justify-center w-full max-w-[340px] md:max-w-[420px] mb-6 md:mb-8">
+            <svg
+              viewBox="0 0 400 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-auto text-[#DFAB40]"
+            >
+              <polygon points="0,7.5 140,6 175,6.8 185,7.5 175,8.2 140,9" fill="currentColor" />
+              <polygon points="200,0 201.5,5.5 207,7.5 201.5,9.5 200,15 198.5,9.5 193,7.5 198.5,5.5" fill="currentColor" />
+              <polygon points="200,3.5 202.5,5 204,7.5 202.5,10 200,11.5 197.5,10 196,7.5 197.5,5" fill="currentColor" />
+              <polygon points="400,7.5 260,6 225,6.8 215,7.5 225,8.2 260,9" fill="currentColor" />
+            </svg>
+          </div>
+
+          <p className="text-[#DFAB40] font-medium text-[16px] md:text-[18px] max-w-3xl leading-relaxed">
+            Crafted with intention, each evening offers a distinct blend of taste, atmosphere, and storytelling.
+          </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="w-full max-w-[1000px] mx-auto mb-16 md:mb-20 overflow-x-auto no-scrollbar">
-            <div className="flex bg-white/5 backdrop-blur-sm p-1 rounded-sm border border-white/10 min-w-max justify-center">
-                {EVENT_CATEGORIES.map((cat) => (
-                    <button
-                        key={cat}
-                        onClick={() => setActiveCategory(cat)}
-                        className={`px-8 py-3.5 transition-all duration-300 text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase whitespace-nowrap ${
-                            activeCategory === cat 
-                                ? "bg-[#DFAB40] text-[#20064A]" 
-                                : "text-white/60 hover:text-white hover:bg-white/5"
-                        }`}
-                    >
-                        {cat}
-                    </button>
-                ))}
+        {/* Filter Tabs - Full width white bar */}
+        <div className="w-full border-y border-[#DFAB40]/50 mb-12 md:mb-16">
+          <div className="w-full bg-white overflow-x-auto no-scrollbar">
+            <div className="flex max-w-[1200px] mx-auto min-w-max justify-center">
+              {EVENT_CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-8 md:px-12 py-4 transition-all duration-300 text-[11px] md:text-sm font-bold tracking-[0.1em] uppercase whitespace-nowrap ${
+                    activeCategory === cat
+                      ? "bg-[#DFAB40] text-white"
+                      : "text-[#20064A] hover:bg-gray-50"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
+          </div>
         </div>
 
-        {/* Events Grid - 3 columns for better spacing and layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-[1300px] mx-auto">
-            {filteredEvents.length > 0 ? (
-                filteredEvents.map(event => (
-                  <MenuSignatureCard 
-                    key={event.id}
-                    date={`${event.date} ${event.month}`}
-                    event={event.title}
-                    time={event.time}
-                    description={event.description}
-                    buttonText="Reserve Now"
-                    image={event.image}
-                    highlights={event.highlights}
-                  />
-                ))
-            ) : (
-                <div className="col-span-full py-24 text-center text-white/30 italic font-medium tracking-widest uppercase">
-                  More curated experiences coming soon...
-                </div>
-            )}
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-[1300px] mx-auto px-4">
+          {filteredEvents.length > 0 ? (
+            filteredEvents.map(event => (
+              <MenuSignatureCard
+                key={event.id}
+                date={`${event.date} ${event.month}`}
+                event={event.title}
+                time={event.time}
+                description={event.description}
+                buttonText="Reserve Now"
+                image={event.image}
+                highlights={event.highlights}
+              />
+            ))
+          ) : (
+            <div className="col-span-full py-24 text-center text-white/30 italic font-medium tracking-widest uppercase">
+              More curated experiences coming soon...
+            </div>
+          )}
         </div>
       </div>
     </section>

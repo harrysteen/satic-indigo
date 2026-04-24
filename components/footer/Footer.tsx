@@ -93,10 +93,23 @@ export default function Footer() {
             {/* Socials */}
             <div className="flex flex-col gap-8">
               <h4 className="font-bold text-lg md:text-xl tracking-wide opacity-90 font-el-messiri">Socials</h4>
-              <div className="flex gap-4">
-                 {[1, 2, 3, 4].map((i) => (
-                   <Link key={i} href="#" className="w-12 h-12 rounded-full bg-brand-white/80 hover:bg-brand-white transition-all shadow-lg flex items-center justify-center text-brand-blue" />
-                 ))}
+              <div className="flex gap-8 items-center">
+                 {/* Instagram */}
+                 <Link href="#" className="flex items-center justify-center text-brand-white opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                 </Link>
+                 
+                 {/* Google */}
+                 <Link href="#" className="flex items-center justify-center text-brand-white opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 12h8.5" />
+                      <path d="M20.5 12a9 9 0 1 1 -2 -6.5" />
+                    </svg>
+                 </Link>
               </div>
             </div>
           </div>
