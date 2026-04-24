@@ -30,10 +30,10 @@ export default function EventsOffers() {
 
   return (
     <section className="w-full py-24 md:py-32 bg-white flex flex-col items-center relative overflow-hidden">
-      <div className="max-w-[1400px] w-full px-4 relative flex flex-col items-center z-10 text-center">
+      <div className="max-w-[1400px] w-full px-4 pt-20 md:pt-0 relative flex flex-col items-center z-10 text-center">
           
         {/* Halal Stamp - Right Positioned */}
-        <div className="absolute right-4 md:right-10 top-0 w-20 h-20 md:w-32 md:h-32 pointer-events-none">
+        <div className="absolute right-4 md:right-10 top-0 md:-top-6 w-20 h-20 md:w-32 md:h-32 pointer-events-none">
              <img src="/logo/halal.png" alt="Halal Certified" className="w-full h-full object-contain drop-shadow-md" />
         </div>
 

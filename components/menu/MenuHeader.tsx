@@ -6,9 +6,9 @@ import MenuLegend from "./MenuLegend";
 
 const MenuHeader = () => {
   return (
-    <div className="flex flex-col items-center mb-6 relative w-full px-4">
+    <div className="flex flex-col items-center mb-6 relative w-full px-4 pt-16 md:pt-0">
       {/* Halal Stamp - Absolute Positioned */}
-      <div className="absolute right-4 md:right-10 top-0 w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
+      <div className="absolute right-4 md:right-10 top-0 md:-top-4 w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}

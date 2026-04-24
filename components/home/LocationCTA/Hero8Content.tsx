@@ -19,7 +19,7 @@ export default function Hero8Content() {
         <div className="flex-1 w-full bg-gradient-to-l from-transparent to-[#DFAB40] h-[1px]"></div>
       </div>
 
-      <p className="text-[#DFAB40] font-semibold text-xs md:text-sm font-sans tracking-wide max-w-2xl mb-8 text-center uppercase">
+      <p className="text-[#DFAB40] font-medium text-[18px] font-sans tracking-wide max-w-2xl mb-8 text-center">
         We are well-connected and easy to reach. We wait to serve you with a dining experience like no other.
       </p>
 
@@ -28,7 +28,7 @@ export default function Hero8Content() {
       {/* 1. Map Section - Full Width Horizontal Box */}
       <div className="w-full border-2 border-[#20064A] rounded-xl overflow-hidden h-[250px] md:h-[320px] mb-10 shadow-sm relative z-20">
          <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.9691866415786!2d-95.78918232446777!3d29.41505317524675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86411d333068779b%3A0xe5a14d45543c983d!2s451%20Minonite%20Rd%20Suite%20190%2C%20Rosenberg%2C%20TX%2077469%2C%20USA!5e0!3m2!1sen!2sin!4v1712711000000!5m2!1sen!2sin" 
+          src="https://maps.google.com/maps?q=451+Minonite+Road+Suite+190,+Rosenberg,+TX+77469,+USA&output=embed&z=16" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
@@ -93,32 +93,21 @@ export default function Hero8Content() {
       {/* 3. Working Hours & Image Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Working Hours Card */}
-        <div className="relative overflow-hidden rounded-xl border-2 border-[#DFAB40] p-6 md:p-8 text-center bg-white shadow-md flex flex-col items-center justify-center min-h-[300px] md:h-[569px]">
-           {/* Logo Pattern Background */}
-           <div className="absolute inset-0 opacity-[0.02] pointer-events-none z-0 bg-repeat bg-[length:120px_120px]">
-              <div className="grid grid-cols-6 gap-6 p-4">
-                {[...Array(18)].map((_, i) => (
-                  <div key={i} className="flex items-center justify-center">
-                    <img src="/logo/logoicon.png" alt="" className="w-6 h-6 object-contain gray-scale brightness-0" />
-                  </div>
-                ))}
-              </div>
-           </div>
-
+        <div className="relative overflow-hidden rounded-xl border-2 border-[#DFAB40] p-6 md:p-8 text-center bg-[#20064A] shadow-md flex flex-col items-center justify-center min-h-[300px] md:h-[569px]">
            <div className="relative z-10 w-full flex flex-col items-center gap-1">
-            <h3 className="text-[#20064A] font-el-messiri text-[28px] md:text-[32px] font-medium mb-4 md:mb-6">Working Hours</h3>
+            <h3 className="text-white font-el-messiri text-[28px] md:text-[32px] font-medium mb-4 md:mb-6">Working Hours</h3>
             
             <div className="flex flex-col items-center w-full">
-                <span className="text-[#20064A] font-bold text-[15px] md:text-[16px] xl:text-[18px] mb-1">Sunday, Tuesday, Thursday</span>
-                <span className="text-[#D8A131] font-bold text-[13px] md:text-[14px] xl:text-[16px] mb-4">11:00 AM – 9:30 PM</span>
+                <span className="text-white font-bold text-[15px] md:text-[16px] xl:text-[18px] mb-1">Sunday, Tuesday, Thursday</span>
+                <span className="text-[#DFAB40] font-bold text-[13px] md:text-[14px] xl:text-[16px] mb-4">11:00 AM – 9:30 PM</span>
                 
-                <span className="text-[#20064A] font-bold text-[15px] md:text-[16px] xl:text-[18px] mb-1">Wednesday</span>
-                <span className="text-[#D8A131] font-bold text-[13px] md:text-[14px] xl:text-[16px] mb-4">11:00 AM – 9:00 PM</span>
+                <span className="text-white font-bold text-[15px] md:text-[16px] xl:text-[18px] mb-1">Wednesday</span>
+                <span className="text-[#DFAB40] font-bold text-[13px] md:text-[14px] xl:text-[16px] mb-4">11:00 AM – 9:00 PM</span>
                 
-                <span className="text-[#20064A] font-bold text-[15px] md:text-[16px] xl:text-[18px] mb-1">Friday, Saturday</span>
-                <span className="text-[#D8A131] font-bold text-[13px] md:text-[14px] xl:text-[16px] mb-5">11:00 AM – 10:00 PM</span>
+                <span className="text-white font-bold text-[15px] md:text-[16px] xl:text-[18px] mb-1">Friday, Saturday</span>
+                <span className="text-[#DFAB40] font-bold text-[13px] md:text-[14px] xl:text-[16px] mb-5">11:00 AM – 10:00 PM</span>
 
-                <span className="text-[#20064A] font-extrabold text-[13px] md:text-[14px] xl:text-[16px] mt-2 md:mt-4">*Closed on Mondays</span>
+                <span className="text-white/70 font-extrabold text-[13px] md:text-[14px] xl:text-[16px] mt-2 md:mt-4">*Closed on Mondays</span>
             </div>
            </div>
         </div>
@@ -126,8 +115,8 @@ export default function Hero8Content() {
         {/* Restaurant Image Card */}
         <div className="rounded-xl border-2 border-[#DFAB40] overflow-hidden shadow-md w-full h-[300px] md:h-[569px]">
           <img 
-            src="/hero8/sign.png" 
-            alt="INDIGO Indian Restaurant Sign" 
+            src="/kumar-images/workinghours.png" 
+            alt="INDIGO Indian Restaurant" 
             className="w-full h-full object-cover"
           />
         </div>

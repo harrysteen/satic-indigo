@@ -26,19 +26,18 @@ export default function HeroText({ onPlayClick }: HeroTextProps) {
     <div className="relative z-20 flex flex-col items-center text-center px-4 w-full max-w-5xl mt-16 md:mt-12 lg:mt-16 font-sans">
       <BigLogo />
 
-      <h1 className="text-brand-white md:text-brand-blue text-3xl md:text-5xl font-el-messiri mt-4 md:mt-8 mb-4 sm:mb-6 md:mb-8 tracking-[0.1em] leading-tight uppercase relative z-10">
+      <h1 className="text-brand-white md:text-brand-blue text-3xl md:text-5xl font-el-messiri mt-4 md:mt-8 mb-2 md:mb-4 tracking-[0.1em] leading-tight uppercase relative z-10">
         INDO PAK RESTAURANT
       </h1>
 
-      <MainDivider className="!my-0 mb-3 sm:mb-4 md:mb-5 z-10 opacity-100" />
+      <MainDivider className="!my-0 mt-0 md:mt-2 mb-6 md:mb-8 z-10 opacity-100" />
 
-      <h3 className="text-brand-white md:text-brand-blue text-[18px] font-el-messiri font-medium mb-4 md:mb-5 tracking-[0.02em] leading-relaxed relative z-10">
+      <h3 className="text-brand-white md:text-brand-blue text-[18px] md:text-[20px] font-el-messiri font-bold mb-2 md:mb-3 tracking-[0.02em] leading-relaxed relative z-10">
         Namaste. Khushamdeed.
       </h3>
 
-      <p className="text-white md:text-brand-maroon text-[14px] md:text-[16px] max-w-2xl font-medium mb-8 leading-relaxed px-4 opacity-100 md:opacity-90">
-        We welcome you to experience the tantalising flavours and warm
-        hospitality from the spice lands to the east.
+      <p className="text-white md:text-[#B64D3F] text-[14px] md:text-[16px] max-w-[800px] font-medium mb-8 leading-relaxed px-4 opacity-100 md:opacity-90">
+        Once upon a time, there was a land that was sought out the most for its gold. Travellers from across the world flocked to see this mystical prosperity. They discovered this gold in the vast farmlands and across kitchens. This gold was the spices.
       </p>
 
       {onPlayClick ? (

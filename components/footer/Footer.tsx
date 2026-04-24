@@ -28,7 +28,7 @@ export default function Footer() {
              </div>
 
              <p className="text-brand-white/60 text-sm md:text-base mb-12 max-w-sm font-medium">
-                Where every flavour unveils a story rooted in culture
+                Where every flavour unveils a story rooted in culture.
              </p>
 
              {/* Newsletter */}
@@ -95,7 +95,7 @@ export default function Footer() {
               <h4 className="font-bold text-lg md:text-xl tracking-wide opacity-90 font-el-messiri">Socials</h4>
               <div className="flex gap-8 items-center">
                  {/* Instagram */}
-                 <Link href="#" className="flex items-center justify-center text-brand-white opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                 <Link href="https://www.instagram.com/indigorestauranttx/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-brand-white opacity-90 hover:opacity-100 hover:scale-110 transition-all">
                     <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -104,7 +104,7 @@ export default function Footer() {
                  </Link>
                  
                  {/* Google */}
-                 <Link href="#" className="flex items-center justify-center text-brand-white opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                 <Link href="https://www.google.com/search?q=indigo+indian+restaurant+houston&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXTwYeRZCPVUxdwVmg37SreajmjYisXFU_mHnEGEKR9u9iBf2HIayp6VvNnmLSwe6v2Q8MRCJBrMSD5wDjpKxip2tU0y2mj2SP-lTrfeceRCIP6QUw%3D%3D&sa=X" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-brand-white opacity-90 hover:opacity-100 hover:scale-110 transition-all">
                     <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 12h8.5" />
                       <path d="M20.5 12a9 9 0 1 1 -2 -6.5" />

@@ -57,7 +57,7 @@ export default function ContactView() {
               <div className="w-full aspect-[21/9] md:aspect-[21/7] bg-gray-100 rounded-xl overflow-hidden border border-[#20064A]/10 shadow-lg relative">
                   <iframe 
                     title="Indigo Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.858066531362!2d-95.7950982!3d29.5694762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640fbadb08b53df%3A0x6d8f58be5b3c439b!2s451%20Mennonite%20Rd%20%23190%2C%20Rosenberg%2C%20TX%2077469!5e0!3m2!1sen!2sus!4v1712910000000!5m2!1sen!2sus"
+                    src="https://maps.google.com/maps?q=451+Mennonite+Road+Suite+190,+Rosenberg,+TX+77469,+USA&output=embed&z=16"
                     className="w-full h-full border-0 opacity-90 transition-opacity hover:opacity-100"
                     allowFullScreen
                     loading="lazy"

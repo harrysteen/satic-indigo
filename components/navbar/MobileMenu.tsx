@@ -8,7 +8,7 @@ const links = [
   { href: "/menu", label: "Menu" },
   { href: "/events", label: "Events" },
   { href: "/catering", label: "Catering" },
-  { href: "/contact", label: "Connect" },
+  { href: "/contact", label: "Contact Us" },
   { href: "/careers", label: "Careers" },
   { href: "/contact#reservation", label: "Reserve a Table" },
   { href: "https://indigo-indian-restaurant-rosenberg.cloveronline.com/menu/all", label: "Order Now", external: true },

@@ -68,7 +68,7 @@ export default function CateringView() {
 
       {/* 3. Elevate Section */}
       <section className="w-full py-16 flex flex-col items-center bg-white px-4 md:px-8">
-          <div className="max-w-[1000px] w-full text-center relative flex flex-col items-center mb-10">
+          <div className="max-w-[1000px] w-full text-center relative flex flex-col items-center mb-10 pt-20 md:pt-0">
               <h2 className="text-[#20064A] text-2xl md:text-[42px] font-el-messiri mb-6 tracking-[0.05em] uppercase">ELEVATE YOUR EVENT</h2>
               
               {/* Gold Divider with Star */}
@@ -84,7 +84,7 @@ export default function CateringView() {
               </p>
               
               {/* Halal Stamp - Right Aligned as in image */}
-              <div className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 w-20 h-20 md:w-36 md:h-36 pointer-events-none">
+              <div className="absolute right-0 md:-right-4 top-0 md:top-1/2 translate-y-0 md:-translate-y-1/2 w-20 h-20 md:w-36 md:h-36 pointer-events-none">
                   <img src="/logo/halal.png" alt="Halal Certified" className="w-full h-full object-contain" />
               </div>
           </div>
