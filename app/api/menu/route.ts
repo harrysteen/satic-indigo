@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getMenuClover } from "@/lib/getMenuClover";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     const data = await getMenuClover();
