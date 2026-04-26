@@ -20,10 +20,11 @@ export interface CloverItem {
  * Helper to fetch data from Clover Sandbox API
  */
 async function fetchFromClover(endpoint: string) {
-  const mId = process.env.NEXT_PUBLIC_CLOVER_MERCHANT_ID;
-  const token = process.env.NEXT_PUBLIC_CLOVER_API_TOKEN;
+  const mId = process.env.CLOVER_MERCHANT_ID;
+  const token = process.env.CLOVER_API_TOKEN;
 
   if (!mId || !token) {
+    console.error("Missing Clover credentials in environment variables.");
     throw new Error("Missing Clover credentials in environment variables.");
   }
 

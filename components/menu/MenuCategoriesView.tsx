@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import MenuCategoryTabs from "./MenuCategoryTabs";
 import MenuCategoryLayout from "./MenuCategoryLayout";
 import { MENU_CATEGORIES } from "./MenuData";
-import { getMenuClover } from "@/lib/getMenuClover"; // ✅ NEW
+// import { getMenuClover } from "@/lib/getMenuClover"; // ❌ REMOVED: Now fetching from backend API
 
 export default function MenuCategoriesView() {
   const [activeCategory, setActiveCategory] = useState(MENU_CATEGORIES[0]);
@@ -13,9 +13,14 @@ export default function MenuCategoriesView() {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getMenuClover(); // ✅ FETCH FROM CLOVER
-      console.log("Clover Data:", data); // 👈 DEBUG
-      setMenuData(data);
+      try {
+        const response = await fetch("/api/menu");
+        if (!response.ok) {
+          throw new Error("Failed to fetch menu");
+        }
+        const data = await response.json();
+        console.log("Clover Data from API:", data); // 👈 DEBUG
+        setMenuData(data);
       
       const loadedCategories = Object.keys(data);
       if (loadedCategories.length > 0) {
@@ -29,10 +34,13 @@ export default function MenuCategoriesView() {
         // Default to the first category that actually has items
         setActiveCategory(sortedCategories[0]);
       }
+    } catch (error) {
+      console.error("Error fetching menu:", error);
     }
+  }
 
-    fetchData();
-  }, []);
+  fetchData();
+}, []);
 
   return (
     <div className="w-full bg-white py-6 md:py-8">
