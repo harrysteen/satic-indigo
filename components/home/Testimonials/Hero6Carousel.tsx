@@ -5,28 +5,28 @@ import Hero6TestimonialCard from "./Hero6TestimonialCard";
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    quote: "“The curries are fantastic, flavorful, rich with texture and the cheese naan was WAY cheesy delicious!”",
+    name: "Huda Qadeer",
+    quote: "“This place is modern, well lit, and pleasantly maintained. We were super impressed with the quality of food and service. Although all tables were packed, the service was top notch!”",
   },
   {
-    name: "Jason R.",
-    quote: "“Loved the beautiful ambience with the decor and traditional artwork. The service was friendly and efficient.”",
+    name: "Billy Hinners",
+    quote: "“I’ve eaten Indian food in some of the biggest cities in the US and my food at Indigo was comparable to the best of them.”",
   },
   {
-    name: "Amit S.",
-    quote: "“Food was exceptionally delicious, tender and nicely seasoned. Authentic taste and generous portions.”",
+    name: "Bridget Mitchell",
+    quote: "“My husband and I found this gem for our Sunday lunch, and we were NOT disappointed! The ambience, food, and service were a solid 10/10. We had the Chicken 65, the goat biriyani, and garlic naan.”",
   },
   {
-    name: "Elena G.",
-    quote: "“I highly recommend you stop by as the ambiance was amazingly beautiful! Definitely will be coming back!”",
+    name: "Mark Mitchell",
+    quote: "“I absolutely loved my stop in Indigo. Muhammad was a great server and dealt with my wife and I with care and patience in a swift manner. The food was delicious as well! We got Chicken 65, garlic naan, and goat biryani!”",
   },
   {
-    name: "Raj P.",
-    quote: "“The best Indo-Pak food in the area. The biryani is a must-try, perfectly spiced and aromatic!”",
+    name: "Erica Giove",
+    quote: "“Wow! This was an unexpected score! Muhammad was our server... AMAZING! Super attentive, knowledgeable of all the dishes, and kind.”",
   },
   {
-    name: "Linda W.",
-    quote: "“Friendly staff and a very clean restaurant. We enjoyed every dish we ordered. Five stars!”",
+    name: "CY Watkins",
+    quote: "“Decided to give this place a try, and it didn't disappoint! The service was friendly and efficient. We absolutely loved the butter chicken, naan, and samosas – all really delicious.”",
   }
 ];
 
@@ -53,7 +53,7 @@ export default function Hero6Carousel() {
       {/* Cards Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 w-full mb-12 min-h-[220px]">
         {visibleTestimonials.map((test, idx) => (
-          <div key={`${startIndex}-${idx}`} className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div key={`${startIndex}-${idx}`} className="animate-in fade-in slide-in-from-bottom-4 duration-700 h-full">
             <Hero6TestimonialCard name={test.name} quote={test.quote} />
           </div>
         ))}

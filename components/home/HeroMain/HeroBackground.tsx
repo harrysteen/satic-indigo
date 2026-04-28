@@ -58,7 +58,7 @@ export default function HeroBackground({
             className="relative w-full h-[100svh] md:w-full md:h-screen flex items-center justify-center transition-shadow duration-500"
           >
             {/* Unified Shape & Content Container */}
-            <div className="relative w-full h-full max-w-[1900px] mx-auto scale-90 sm:scale-100 md:scale-[0.95] origin-bottom">
+            <div className="relative w-full h-full max-w-[1900px] mx-auto scale-100 sm:scale-[1.05] md:scale-[1.05] origin-bottom">
 
               {/* 1. Background Visual Frame */}
               <motion.div

@@ -28,7 +28,7 @@ export default function Hero8Content() {
       {/* 1. Map Section - Full Width Horizontal Box */}
       <div className="w-full border-2 border-[#20064A] rounded-xl overflow-hidden h-[250px] md:h-[320px] mb-10 shadow-sm relative z-20">
          <iframe 
-          src="https://maps.google.com/maps?q=451+Minonite+Road+Suite+190,+Rosenberg,+TX+77469,+USA&output=embed&z=16" 
+          src="https://maps.google.com/maps?q=451+Mennonite+Road+Suite+190,+Rosenberg,+TX+77469,+USA&output=embed&z=16" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 

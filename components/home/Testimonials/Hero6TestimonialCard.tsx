@@ -18,7 +18,7 @@ const StarRow = () => (
 
 export default function Hero6TestimonialCard({ name, quote }: TestimonialProps) {
   return (
-    <div className="flex flex-col items-center justify-center p-8 md:p-12 bg-white rounded-md border-[2.5px] border-[#DFAB40] shadow-md w-full h-full min-h-[250px] md:min-h-[300px]">
+    <div className="flex flex-col items-center justify-center p-8 md:p-12 bg-white rounded-md border-[2.5px] border-[#DFAB40] shadow-md w-full h-full min-h-[300px] md:min-h-[360px]">
       
       <StarRow />
       

@@ -8,10 +8,10 @@ export default function MenuCTA() {
       <div className="w-full py-20 md:py-32 px-4 flex flex-col items-center relative min-h-[400px]">
         {/* Background Decorative Pattern - Using a more stable repeat */}
         <div 
-            className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+            className="absolute inset-0 opacity-10 pointer-events-none" 
             style={{ 
                 backgroundImage: 'url("/logo/logoicon.png")',
-                backgroundSize: '100px',
+                backgroundSize: '60px',
                 backgroundRepeat: 'repeat',
                 backgroundPosition: 'center'
             }}
