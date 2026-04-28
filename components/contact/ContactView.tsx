@@ -121,11 +121,10 @@ export default function ContactView() {
       </section>
 
       {/* 4. Step Into INDIGO */}
-      <section className="relative w-full py-40 flex flex-col items-center text-center bg-[#20064A] overflow-hidden">
-          <div className="absolute inset-0 opacity-30 pointer-events-none">
+      <section className="relative w-full py-48 md:py-64 flex flex-col items-center text-center bg-[#20064A] overflow-hidden">
+          <div className="absolute inset-0 opacity-50 pointer-events-none">
              <img src="/imges/contact us/step into indigo/Frame 307.webp" alt="" className="w-full h-full object-cover" />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#20064A]/80 to-[#20064A]/80" />
 
           <div className="relative z-10 max-w-4xl px-4">
               <h2 className="text-white text-3xl md:text-6xl mb-8 tracking-wide">Step Into INDIGO</h2>
@@ -143,23 +142,20 @@ export default function ContactView() {
 
       {/* 5. Let's Connect (Form + Team Image) */}
       <section className="w-full py-12 md:py-16 flex flex-col items-center bg-white px-4">
-          <div className="max-w-[1100px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-[1100px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
               {/* Form Side - More Compact */}
-              <div className="relative p-6 md:p-8 border border-[#DFAB40]/30 rounded-2xl overflow-hidden bg-white shadow-sm font-plus-jakarta">
-                  <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-                      <div className="grid grid-cols-6 gap-x-6 gap-y-10 p-6">
-                          {Array.from({ length: 30 }).map((_, i) => (
-                              <img key={i} src="/logo/logoicon.png" alt="" className="w-5 h-5 grayscale opacity-20" />
-                          ))}
-                      </div>
-                  </div>
+              <div className="relative p-8 md:p-12 lg:p-16 border border-[#DFAB40]/30 rounded-2xl overflow-hidden bg-white shadow-sm font-plus-jakarta flex flex-col justify-center min-h-[500px] lg:min-h-[600px]">
+                  <div 
+                    className="absolute inset-0 pointer-events-none bg-cover bg-center transform scale-[1.05]" 
+                    style={{ backgroundImage: "url('/kumar-images/catering-sec-5.png')" }} 
+                  />
 
                   <div className="relative z-10 flex flex-col items-center">
                     <h3 className="text-[#20064A] text-xl md:text-2xl font-el-messiri mb-2 uppercase tracking-wide">Let&apos;s Connect</h3>
                     <div className="w-20 h-[1.5px] bg-[#DFAB40]/60 mb-6" />
                     
-                    <form className="w-full flex flex-col gap-3.5" onSubmit={(e) => e.preventDefault()}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <form className="w-full flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div className="flex flex-col gap-1.5">
                                 <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Name</label>
                                 <input required type="text" placeholder="John Doe" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 font-plus-jakarta" />
@@ -190,10 +186,10 @@ export default function ContactView() {
                         
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Message</label>
-                            <textarea rows={3} placeholder="Type here..." className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 resize-none font-plus-jakarta" />
+                            <textarea rows={5} placeholder="Type here..." className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-3 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 resize-none font-plus-jakarta" />
                         </div>
 
-                        <button type="submit" className="w-full bg-[#20064A] text-white py-3.5 mt-2 rounded-md font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-[#300a6e] transition-all font-plus-jakarta">
+                        <button type="submit" className="w-full bg-[#20064A] text-white py-4 mt-4 rounded-md font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-[#300a6e] transition-all font-plus-jakarta">
                             Send Now
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="rotate-45 font-plus-jakarta"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
                         </button>
@@ -202,8 +198,8 @@ export default function ContactView() {
               </div>
 
               {/* Team Image Side - Scaled Down */}
-              <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[480px] rounded-2xl overflow-hidden shadow-xl">
-                  <img src="/imges/contact us/lets connect/Rectangle 133.webp" alt="Indigo Team" className="w-full h-full object-cover" />
+              <div className="relative w-full h-full min-h-[500px] lg:min-h-[600px] rounded-2xl overflow-hidden shadow-xl">
+                  <img src="/imges/contact us/lets connect/Rectangle 133.webp" alt="Indigo Team" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#20064A]/40 to-transparent" />
                   <div className="absolute inset-0 border border-[#DFAB40]/10 rounded-2xl pointer-events-none" />
               </div>

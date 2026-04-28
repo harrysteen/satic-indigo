@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { EVENTS_DATA, EVENT_CATEGORIES } from "./EventsData";
 import MenuSignatureCard from "../menu/MenuSignatureCard";
+import WhitePetals from "../decorations/WhitePetals";
 
 export default function EventsGallery() {
   const [activeCategory, setActiveCategory] = useState("ALL");
@@ -13,9 +14,12 @@ export default function EventsGallery() {
 
   return (
     <section
-      className="w-full py-24 md:py-32 relative overflow-hidden bg-[#20064A] bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/kumar-images/signatur-dining.png')" }}
+      className="w-full py-24 md:py-32 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/kumar-images/EXPERIENC-events.png')" }}
     >
+      {/* Top Corner Flower Decorations */}
+      <WhitePetals position="top-left" className="top-0 left-0" rotation="transform scale-y-[-1]" opacity="opacity-60" />
+      <WhitePetals position="top-right" className="top-0 right-0" rotation="transform scale-y-[-1]" opacity="opacity-60" />
 
       <div className="relative z-10 max-w-[1300px] mx-auto flex flex-col items-center">
         {/* Section Header */}
@@ -50,11 +54,10 @@ export default function EventsGallery() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-8 md:px-12 py-4 transition-all duration-300 text-[11px] md:text-sm font-bold tracking-[0.1em] uppercase whitespace-nowrap ${
-                    activeCategory === cat
+                  className={`px-8 md:px-12 py-4 transition-all duration-300 text-[11px] md:text-sm font-bold tracking-[0.1em] uppercase whitespace-nowrap ${activeCategory === cat
                       ? "bg-[#DFAB40] text-white"
                       : "text-[#20064A] hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
@@ -79,7 +82,7 @@ export default function EventsGallery() {
               />
             ))
           ) : (
-            <div className="col-span-full py-24 text-center text-white/30 italic font-medium tracking-widest uppercase">
+            <div className="col-span-full py-24 text-center text-white/50 italic font-medium tracking-widest uppercase">
               More curated experiences coming soon...
             </div>
           )}

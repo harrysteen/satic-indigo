@@ -26,17 +26,17 @@ export default function HeroText({ onPlayClick }: HeroTextProps) {
     <div className="relative z-20 flex flex-col items-center text-center px-4 w-full max-w-5xl mt-16 md:mt-12 lg:mt-16 font-sans">
       <BigLogo />
 
-      <h1 className="text-brand-white md:text-brand-blue text-3xl md:text-5xl font-el-messiri mt-0 md:mt-0 mb-0 md:mb-0 tracking-[0.1em] leading-tight uppercase relative z-10">
+      <h1 className="text-brand-white md:text-brand-blue text-3xl md:text-5xl font-el-messiri mt-0 md:mt-0 mb-0 md:mb-0 tracking-[0.03em] leading-tight uppercase relative z-10">
         INDO PAK RESTAURANT
       </h1>
 
-      <MainDivider className="!mt-0 md:!mt-1 !mb-3 md:!mb-4 z-10 opacity-100" />
+      <MainDivider className="!mt-0 md:!mt-1 !mb-6 md:!mb-8 z-10 opacity-100" />
 
-      <h3 className="text-brand-white md:text-brand-blue text-[18px] md:text-[20px] font-el-messiri font-bold mb-2 md:mb-3 tracking-[0.02em] leading-relaxed relative z-10">
+      <h3 className="text-brand-white md:text-brand-blue text-[18px] md:text-[20px] font-el-messiri font-bold mb-0 md:mb-1 tracking-[0.02em] leading-relaxed relative z-10">
         Namaste. Khushamdeed.
       </h3>
 
-      <p className="text-white md:text-[#B64D3F] text-[14px] md:text-[16px] max-w-[800px] font-medium mb-8 leading-relaxed px-4 opacity-100 md:opacity-90">
+      <p className="text-white md:text-[#B64D3F] text-[12px] md:text-[14px] max-w-[800px] font-medium mb-8 leading-relaxed px-4 opacity-100 md:opacity-90">
         Once upon a time, there was a land that was sought out the most for its gold. Travellers from across the world flocked to see this mystical prosperity. They discovered this gold in the vast farmlands and across kitchens. This gold was the spices.
       </p>
 

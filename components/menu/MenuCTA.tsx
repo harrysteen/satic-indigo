@@ -4,18 +4,11 @@ import YellowPetals from "../decorations/YellowPetals";
 
 export default function MenuCTA() {
   return (
-    <div className="w-full relative overflow-hidden bg-white border-y-[12px] md:border-y-[16px] border-[#20064A]">
+    <div 
+      className="w-full relative overflow-hidden bg-cover bg-center border-y-[12px] md:border-y-[16px] border-[#20064A]"
+      style={{ backgroundImage: 'url("/kumar-images/menu-sec-6.png")' }}
+    >
       <div className="w-full py-20 md:py-32 px-4 flex flex-col items-center relative min-h-[400px]">
-        {/* Background Decorative Pattern - Using a more stable repeat */}
-        <div 
-            className="absolute inset-0 opacity-10 pointer-events-none" 
-            style={{ 
-                backgroundImage: 'url("/logo/logoicon.png")',
-                backgroundSize: '60px',
-                backgroundRepeat: 'repeat',
-                backgroundPosition: 'center'
-            }}
-        />
 
         {/* Left Half Flower Decoration - Moved more inside */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-36 md:w-64 h-auto opacity-90 pointer-events-none select-none -translate-x-[10%] z-0">

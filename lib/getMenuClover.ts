@@ -40,9 +40,9 @@ export async function getMenuClover() {
       id: cloverItem.id, // Use Clover ID
       name: cloverItem.name, // Use Clover Name
       price: formattedPrice, // Use Clover Price
-      description: localMatch?.description || "",
+      description: cloverItem.alternateName || localMatch?.description || "", // Prefer Clover description if available
       category: category,
-      image: localMatch?.image || null,
+      image: cloverItem.imageUrl || localMatch?.image || null, // Prefer Clover Image if available
       isVegetarian: localMatch?.isVegetarian || false,
       isSpicy: localMatch?.isSpicy || false,
       isPopular: localMatch?.isPopular || false,

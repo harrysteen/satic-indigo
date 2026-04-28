@@ -15,7 +15,7 @@ export default function CareersView() {
 
       {/* 2. Opportunities Section */}
       <section className="relative w-full py-24 bg-[#20064A] flex flex-col items-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20 pointer-events-none grayscale brightness-50">
+        <div className="absolute inset-0 opacity-50 pointer-events-none">
            <img src="/imges/career/opportunities/Frame 307.webp" alt="" className="w-full h-full object-cover" />
         </div>
 
@@ -122,13 +122,10 @@ export default function CareersView() {
               {/* Form Side - Scaled Down */}
               <div className="relative p-6 md:p-10 border-[1.5px] border-[#DFAB40]/40 rounded-3xl overflow-hidden bg-white shadow-sm">
                   {/* Pattern */}
-                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none text-[#20064A]">
-                      <div className="grid grid-cols-6 gap-6 p-6">
-                          {Array.from({ length: 48 }).map((_, i) => (
-                              <img key={i} src="/logo/logoicon.png" alt="" className="w-6 h-6 grayscale opacity-20" />
-                          ))}
-                      </div>
-                  </div>
+                  <div 
+                    className="absolute inset-0 pointer-events-none bg-cover bg-center transform scale-[1.05]" 
+                    style={{ backgroundImage: "url('/kumar-images/catering-sec-5.png')" }} 
+                  />
 
                   <div className="relative z-10 flex flex-col items-center">
                     <h3 className="text-[#20064A] text-2xl mb-2 uppercase tracking-widest font-el-messiri">JOIN US TODAY</h3>

@@ -11,6 +11,9 @@ export interface CloverItem {
   name: string;
   price: number;
   hidden: boolean;
+  alternateName?: string;
+  imageUrl?: string;
+  imageFilename?: string;
   categories?: {
     elements: CloverCategory[];
   };

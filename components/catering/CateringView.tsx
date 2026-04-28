@@ -17,7 +17,7 @@ export default function CateringView() {
       {/* 2. Services Offered Section */}
       <section className="relative w-full py-24 bg-[#20064A] flex flex-col items-center overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 blur-sm pointer-events-none">
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
            <img src="/imges/catering/services offered/Frame 307.webp" alt="" className="w-full h-full object-cover" />
         </div>
 
@@ -78,7 +78,7 @@ export default function CateringView() {
                 <div className="flex-1 h-[1.5px] bg-gradient-to-l from-transparent via-[#DFAB40]/60 to-[#DFAB40]" />
               </div>
 
-              <p className="text-[#DFAB40] text-base md:text-[22px] font-bold italic max-w-2xl leading-tight">
+              <p className="text-[#DFAB40] font-serif text-lg md:text-[22px] font-medium leading-[1.6] text-center max-w-2xl px-4 mt-2">
                  Transform your gatherings into something truly memorable, 
                  with flavors that blend tradition, creativity, and indulgence
               </p>
@@ -91,13 +91,10 @@ export default function CateringView() {
 
           <div className="max-w-[700px] w-full mt-4 mb-24 relative p-8 md:p-12 border border-[#DFAB40] rounded-[30px] bg-[#fdfaf1] shadow-sm overflow-hidden">
               {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
-                  <div className="grid grid-cols-8 md:grid-cols-12 gap-x-8 gap-y-12 p-8">
-                      {Array.from({ length: 120 }).map((_, i) => (
-                          <img key={i} src="/logo/logoicon.png" alt="" className="w-6 h-6 grayscale opacity-20" />
-                      ))}
-                  </div>
-              </div>
+              <div 
+                className="absolute inset-0 pointer-events-none bg-cover bg-center transform scale-[1.05]" 
+                style={{ backgroundImage: "url('/kumar-images/catering-sec-5.png')" }} 
+              />
 
               <div className="relative z-10 flex flex-col items-center">
                   <h3 className="text-[#20064A] text-[32px] md:text-4xl font-el-messiri mb-2 tracking-wide font-medium">Let&apos;s Connect</h3>
@@ -121,7 +118,7 @@ export default function CateringView() {
                             required 
                             type="text" 
                             placeholder="John Doe" 
-                            className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                            className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                       </div>
 
@@ -139,7 +136,7 @@ export default function CateringView() {
                                 e.preventDefault();
                               }
                             }}
-                            className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                            className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                           <p className="text-[10px] text-[#20064A]/40 pl-1">Enter a 10-digit mobile number</p>
                       </div>
@@ -151,7 +148,7 @@ export default function CateringView() {
                             required 
                             type="email" 
                             placeholder="you@example.com" 
-                            className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                            className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                       </div>
 
@@ -167,7 +164,7 @@ export default function CateringView() {
                                 e.preventDefault();
                               }
                             }}
-                            className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                            className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                       </div>
 
@@ -177,7 +174,7 @@ export default function CateringView() {
                           <input 
                             required 
                             type="date" 
-                            className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                            className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                       </div>
 
@@ -187,7 +184,7 @@ export default function CateringView() {
                           <input 
                             required 
                             type="time" 
-                            className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                            className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                       </div>
 
@@ -217,7 +214,7 @@ export default function CateringView() {
                                 required 
                                 type="text" 
                                 placeholder="House no, Street, Landmark" 
-                                className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                                className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                             />
                         </div>
                       )}
@@ -228,14 +225,14 @@ export default function CateringView() {
                           <input 
                             type="text" 
                             placeholder="Title..." 
-                            className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
+                            className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                       </div>
 
                       {/* 9. Description */}
                       <div className="flex flex-col gap-2">
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Description</label>
-                          <textarea rows={4} placeholder="Any Special Requests" className="w-full bg-[#faedd1]/50 border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40 resize-none" />
+                          <textarea rows={4} placeholder="Any Special Requests" className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40 resize-none" />
                       </div>
 
                       {/* Submit Button */}

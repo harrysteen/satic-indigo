@@ -18,7 +18,7 @@ export default function EventsOffers() {
       }
     } else {
       // Assuming 5 slides total (indices 0 to 4)
-      const maxSlides = OFFERS_DATA.length > 0 ? OFFERS_DATA.length - 1 : 4;
+      const maxSlides = 4;
       const nextSlide = Math.min(maxSlides, activeSlide + 1);
       setActiveSlide(nextSlide);
       if (carouselRef.current) {
