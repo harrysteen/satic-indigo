@@ -1,4 +1,4 @@
-const CLOVER_API_URL = "https://sandbox.dev.clover.com/v3";
+const CLOVER_API_URL = process.env.CLOVER_API_BASE ? `${process.env.CLOVER_API_BASE}/v3` : "https://sandbox.dev.clover.com/v3";
 
 export interface CloverCategory {
   id: string;
@@ -56,7 +56,7 @@ async function fetchFromClover(endpoint: string) {
  */
 export async function getCloverItems(): Promise<CloverItem[]> {
   try {
-    const data = await fetchFromClover('/items?expand=categories&filter=hidden=false');
+    const data = await fetchFromClover('/items?expand=categories&filter=hidden=false&limit=1000');
     return data.elements || [];
   } catch (error) {
     console.error("Error fetching Clover items:", error);

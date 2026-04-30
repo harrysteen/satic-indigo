@@ -79,7 +79,7 @@ export default function MenuCategoryLayout({ items }: MenuCategoryLayoutProps) {
 
         {/* Right Columns - Scrollable Menu (lg:col-span-9) */}
         <div className="lg:col-span-9 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 items-start max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 items-start h-[500px] md:h-[600px] overflow-y-auto pr-2 custom-scrollbar">
             {items.map((item, idx) => (
               <div 
                 key={item.id} 

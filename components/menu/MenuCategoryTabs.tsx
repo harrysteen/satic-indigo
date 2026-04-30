@@ -11,7 +11,7 @@ export default function MenuCategoryTabs({ categories, activeCategory, onCategor
   return (
     <div className="w-full flex flex-col items-center mb-8 md:mb-12">
       <div className="w-full max-w-[1240px] border border-[#20064A] overflow-x-auto no-scrollbar bg-white">
-        <div className="flex justify-start lg:justify-center min-w-max md:min-w-0">
+        <div className="flex justify-start min-w-max md:min-w-0">
           {categories.map((category) => (
             <MenuCategoryTab
               key={category}

@@ -14,7 +14,7 @@ export default function MenuCategoriesView() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("/api/menu");
+        const response = await fetch(`/api/menu?t=${new Date().getTime()}`, { cache: "no-store" });
         if (!response.ok) {
           throw new Error("Failed to fetch menu");
         }

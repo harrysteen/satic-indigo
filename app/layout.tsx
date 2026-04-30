@@ -25,6 +25,9 @@ const elMessiri = El_Messiri({
 export const metadata: Metadata = {
   title: "INDIGO - Indo-Pak Restaurant",
   description: "Experience the true taste of Indo-Pak cuisine at INDIGO.",
+  icons: {
+    icon: "/logo variations 2.webp",
+  },
 };
 
 export default function RootLayout({
