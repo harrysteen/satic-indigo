@@ -38,11 +38,11 @@ export const MENU_DATA: Record<string, MenuItem[]> = {
     { id: "ap5", name: "Chili Chicken Dry", description: "", price: "13.99", category: "APPETIZERS" },
     { id: "ap6", name: "Bang Bang Shrimp", description: "", price: "11.99", category: "APPETIZERS" },
     { id: "ap7", name: "Chicken 65 Dry", description: "", price: "12.99", category: "APPETIZERS" },
-    { id: "ap8", name: "Chicken Lollipop", description: "", price: "13.99", category: "APPETIZERS" },
+    { id: "ap8", name: "Chicken Lollipop", description: "", price: "13.99", category: "APPETIZERS" , image: "/imges/menu/indigo_s menu/chicken lollipops7.webp" },
     { id: "ap9", name: "Masala Papad", description: "", price: "3.99", category: "APPETIZERS" },
     { id: "ap10", name: "Papad", description: "", price: "1.99", category: "APPETIZERS" },
     { id: "ap11", name: "Dry Gobi Manchurian", description: "", price: "12.99", category: "APPETIZERS" },
-    { id: "ap12", name: "Dry Chili Paneer", description: "", price: "12.99", category: "APPETIZERS" },
+    { id: "ap12", name: "Dry Chili Paneer", description: "", price: "12.99", category: "APPETIZERS" , image: "/imges/menu/indigo_s menu/chicken paneer.webp" },
     { id: "ap13", name: "Green Salad", description: "", price: "4.99", category: "APPETIZERS" }
   ],
   "BARBECUE STARTERS": [
@@ -50,14 +50,14 @@ export const MENU_DATA: Record<string, MenuItem[]> = {
     { id: "ba15", name: "Murgh Malai Boti", description: "", price: "14.99", category: "BARBECUE STARTERS" },
     { id: "ba16", name: "Paneer Tikka Nawab", description: "", price: "13.99", category: "BARBECUE STARTERS" },
     { id: "ba17", name: "Tandoori Lamb Chops", description: "", price: "24.99", category: "BARBECUE STARTERS" },
-    { id: "ba18", name: "Goat Seekh Kebab", description: "", price: "15.99", category: "BARBECUE STARTERS" },
+    { id: "ba18", name: "Goat Seekh Kebab", description: "", price: "15.99", category: "BARBECUE STARTERS" , image: "/imges/menu/indigo_s menu/goat sheekh kabob4.webp" },
     { id: "ba19", name: "Tandoori Chicken", description: "", price: "15.99", category: "BARBECUE STARTERS" },
-    { id: "ba20", name: "Chicken Boti", description: "", price: "14.99", category: "BARBECUE STARTERS" },
+    { id: "ba20", name: "Chicken Boti", description: "", price: "14.99", category: "BARBECUE STARTERS" , image: "/imges/menu/indigo_s menu/chicken boti.webp" },
     { id: "ba21", name: "Indigo Mix Grill Platter", description: "", price: "24.99", category: "BARBECUE STARTERS" }
   ],
   "BREAD": [
     { id: "br22", name: "Plain Naan", description: "", price: "2.49", category: "BREAD" },
-    { id: "br23", name: "Butter Naan", description: "", price: "2.99", category: "BREAD" },
+    { id: "br23", name: "Butter Naan", description: "", price: "2.99", category: "BREAD" , image: "/imges/menu/indigo_s menu/butter naan.webp" },
     { id: "br24", name: "Garlic Naan", description: "", price: "3.49", category: "BREAD" },
     { id: "br25", name: "Chili Naan", description: "", price: "3.49", category: "BREAD" },
     { id: "br26", name: "Cheese Naan", description: "", price: "4.49", category: "BREAD" },
@@ -74,10 +74,10 @@ export const MENU_DATA: Record<string, MenuItem[]> = {
     { id: "ch35", name: "Bombay Bhel", description: "", price: "7.99", category: "CHAAT" }
   ],
   "DESSERT": [
-    { id: "de36", name: "Carrot Halwa w Gulab Jamun", description: "", price: "6.99", category: "DESSERT" },
+    { id: "de36", name: "Carrot Halwa w Gulab Jamun", description: "", price: "6.99", category: "DESSERT" , image: "/imges/menu/indigo_s menu/carrot halva3.webp" },
     { id: "de37", name: "Kheer", description: "", price: "4.99", category: "DESSERT" },
     { id: "de38", name: "Pista Kulfi", description: "", price: "4.99", category: "DESSERT" },
-    { id: "de39", name: "Ras Malai Shot", description: "", price: "5.99", category: "DESSERT" }
+    { id: "de39", name: "Ras Malai Shot", description: "", price: "5.99", category: "DESSERT" , image: "/imges/menu/indigo_s menu/rabdi shot2.webp" }
   ],
   "DRINKS - NON ALCOHOLIC": [
     { id: "dr40", name: "Water", description: "", price: "1.99", category: "DRINKS - NON ALCOHOLIC" },
@@ -90,17 +90,17 @@ export const MENU_DATA: Record<string, MenuItem[]> = {
     { id: "dr47", name: "Canada Dry Ginger Ale", description: "", price: "1.99", category: "DRINKS - NON ALCOHOLIC" },
     { id: "dr48", name: "Regular Ice Tea", description: "", price: "2.49", category: "DRINKS - NON ALCOHOLIC" },
     { id: "dr49", name: "Lemon Ice Tea", description: "", price: "2.49", category: "DRINKS - NON ALCOHOLIC" },
-    { id: "dr50", name: "Mango Lassi", description: "", price: "4.99", category: "DRINKS - NON ALCOHOLIC" },
+    { id: "dr50", name: "Mango Lassi", description: "", price: "4.99", category: "DRINKS - NON ALCOHOLIC" , image: "/imges/menu/indigo_s menu/mango lassi2.webp" },
     { id: "dr51", name: "Indigo Special Lassi", description: "", price: "6.99", category: "DRINKS - NON ALCOHOLIC" },
     { id: "dr52", name: "Salted Lassi", description: "", price: "3.99", category: "DRINKS - NON ALCOHOLIC" },
     { id: "dr53", name: "Chili Mint Lemonade", description: "", price: "4.99", category: "DRINKS - NON ALCOHOLIC" },
     { id: "dr54", name: "Mojito", description: "", price: "5.99", category: "DRINKS - NON ALCOHOLIC" },
-    { id: "dr55", name: "Chai", description: "", price: "2.49", category: "DRINKS - NON ALCOHOLIC" },
+    { id: "dr55", name: "Chai", description: "", price: "2.49", category: "DRINKS - NON ALCOHOLIC" , image: "/imges/menu/indigo_s menu/chai.webp" },
     { id: "dr56", name: "Thumbs Up", description: "", price: "2.49", category: "DRINKS - NON ALCOHOLIC" }
   ],
   "INDO CHINESE": [
     { id: "in57", name: "Chicken Manchurian", description: "", price: "13.99", category: "INDO CHINESE" },
-    { id: "in58", name: "Chili Chicken Gravy", description: "", price: "13.99", category: "INDO CHINESE" },
+    { id: "in58", name: "Chili Chicken Gravy", description: "", price: "13.99", category: "INDO CHINESE" , image: "/imges/menu/indigo_s menu/chilli chicken with gravy4 (1).webp" },
     { id: "in59", name: "Veg. Hakka Noodles", description: "", price: "11.99", category: "INDO CHINESE" },
     { id: "in60", name: "Veg. Schezwan Fried Rice", description: "", price: "12.99", category: "INDO CHINESE" },
     { id: "in61", name: "Veg Schezwan Noodles", description: "", price: "12.99", category: "INDO CHINESE" },
@@ -140,10 +140,10 @@ export const MENU_DATA: Record<string, MenuItem[]> = {
     { id: "ma91", name: "Office Lunch Box (M 2 F)", description: "", price: "10.99", category: "MAIN COURSE" }
   ],
   "NON-VEG CURRIES": [
-    { id: "no92", name: "Butter Chicken", description: "", price: "15.99", category: "NON-VEG CURRIES" },
+    { id: "no92", name: "Butter Chicken", description: "", price: "15.99", category: "NON-VEG CURRIES" , image: "/imges/menu/indigo_s menu/butter chicken4.webp" },
     { id: "no93", name: "Chicken egg Masala", description: "", price: "15.99", category: "NON-VEG CURRIES" },
-    { id: "no94", name: "Chicken Korma", description: "", price: "15.99", category: "NON-VEG CURRIES" },
-    { id: "no95", name: "Goat Kali Mirch", description: "", price: "19.99", category: "NON-VEG CURRIES" },
+    { id: "no94", name: "Chicken Korma", description: "", price: "15.99", category: "NON-VEG CURRIES" , image: "/imges/menu/indigo_s menu/chicken korma3.webp" },
+    { id: "no95", name: "Goat Kali Mirch", description: "", price: "19.99", category: "NON-VEG CURRIES" , image: "/imges/menu/indigo_s menu/goat kalimirch4.webp" },
     { id: "no96", name: "Goat Korma", description: "", price: "19.99", category: "NON-VEG CURRIES" },
     { id: "no97", name: "Hyderabadi Goat Curry", description: "", price: "19.99", category: "NON-VEG CURRIES" },
     { id: "no98", name: "Murgh Tikka Masala", description: "", price: "15.99", category: "NON-VEG CURRIES" },
@@ -159,14 +159,14 @@ export const MENU_DATA: Record<string, MenuItem[]> = {
     { id: "no108", name: "Egg Bhurji", description: "", price: "12.99", category: "NON-VEG CURRIES" }
   ],
   "RICE": [
-    { id: "ri109", name: "Chicken Biryani", description: "", price: "14.99", category: "RICE" },
-    { id: "ri110", name: "Goat Biryani", description: "", price: "17.99", category: "RICE" },
+    { id: "ri109", name: "Chicken Biryani", description: "", price: "14.99", category: "RICE" , image: "/imges/menu/indigo_s menu/chicken biryani5 (1).webp" },
+    { id: "ri110", name: "Goat Biryani", description: "", price: "17.99", category: "RICE" , image: "/imges/menu/indigo_s menu/goat biryani4.webp" },
     { id: "ri111", name: "Jeera Rice", description: "", price: "4.99", category: "RICE" },
     { id: "ri112", name: "Vegetable Biryani", description: "", price: "12.99", category: "RICE" },
     { id: "ri113", name: "Plain Rice", description: "", price: "3.99", category: "RICE" }
   ],
   "SEAFOOD SPECIALITIES": [
-    { id: "se114", name: "Bombay Fish Masala", description: "", price: "15.99", category: "SEAFOOD SPECIALITIES" },
+    { id: "se114", name: "Bombay Fish Masala", description: "", price: "15.99", category: "SEAFOOD SPECIALITIES" , image: "/imges/menu/indigo_s menu/bombay grilled fish5.webp" },
     { id: "se115", name: "Indigo Fish Masala", description: "", price: "15.99", category: "SEAFOOD SPECIALITIES" },
     { id: "se116", name: "Shrimp Masala", description: "", price: "16.99", category: "SEAFOOD SPECIALITIES" }
   ],
