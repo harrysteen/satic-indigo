@@ -6,6 +6,42 @@ import VioletPetals from "../decorations/VioletPetals";
 
 export default function CateringView() {
   const [orderType, setOrderType] = useState<"pickup" | "delivery">("pickup");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("_captcha", "false");
+    formData.append("_template", "table");
+    formData.append("_subject", "New Catering Inquiry - Indigo");
+    formData.append("Order Type", orderType);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/indigoindopakrestaurant@gmail.com", {
+        method: "POST",
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      if (submitStatus !== "error") {
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      }
+    }
+  };
 
   return (
     <div className="w-full bg-white font-plus-jakarta overflow-hidden">
@@ -110,12 +146,13 @@ export default function CateringView() {
                     Share your details and we&apos;ll get back to you.
                   </p>
 
-                  <form className="w-full flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+                  <form className="w-full flex flex-col gap-6" onSubmit={handleSubmit}>
                       {/* 1. Name */}
                       <div className="flex flex-col gap-2">
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Name</label>
                           <input 
                             required 
+                            name="name"
                             type="text" 
                             placeholder="John Doe" 
                             className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
@@ -127,6 +164,7 @@ export default function CateringView() {
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Phone Number</label>
                           <input 
                             required 
+                            name="phone"
                             type="tel" 
                             pattern="[0-9]{10}" 
                             maxLength={10}
@@ -146,6 +184,7 @@ export default function CateringView() {
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Email Address</label>
                           <input 
                             required 
+                            name="email"
                             type="email" 
                             placeholder="you@example.com" 
                             className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
@@ -157,8 +196,9 @@ export default function CateringView() {
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Number of people</label>
                           <input 
                             required 
+                            name="guests"
                             type="text" 
-                            placeholder="Title..." 
+                            placeholder="Number of guests" 
                             onKeyPress={(e) => {
                               if (!/[0-9]/.test(e.key)) {
                                 e.preventDefault();
@@ -173,6 +213,7 @@ export default function CateringView() {
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Select Date</label>
                           <input 
                             required 
+                            name="date"
                             type="date" 
                             className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
@@ -183,6 +224,7 @@ export default function CateringView() {
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Select Time</label>
                           <input 
                             required 
+                            name="time"
                             type="time" 
                             className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
@@ -212,6 +254,7 @@ export default function CateringView() {
                             <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Delivery Address</label>
                             <input 
                                 required 
+                                name="delivery_address"
                                 type="text" 
                                 placeholder="House no, Street, Landmark" 
                                 className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
@@ -223,8 +266,9 @@ export default function CateringView() {
                       <div className="flex flex-col gap-2">
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Budget Per Person</label>
                           <input 
+                            name="budget"
                             type="text" 
-                            placeholder="Title..." 
+                            placeholder="E.g., $20" 
                             className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40" 
                           />
                       </div>
@@ -232,13 +276,28 @@ export default function CateringView() {
                       {/* 9. Description */}
                       <div className="flex flex-col gap-2">
                           <label className="text-[#20064A] text-sm font-bold font-plus-jakarta pl-1">Description</label>
-                          <textarea rows={4} placeholder="Any Special Requests" className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40 resize-none" />
+                          <textarea name="description" rows={4} placeholder="Any Special Requests" className="w-full bg-[#fdfaf1] border border-[#20064A]/30 px-4 py-3 rounded-md text-[#20064A] placeholder:text-[#20064A]/60 shadow-inner text-sm font-plus-jakarta focus:outline-none focus:ring-1 focus:ring-[#20064A]/40 resize-none" />
                       </div>
 
+                      {submitStatus === "success" && (
+                          <div className="bg-green-50 text-green-700 p-3 rounded-md text-sm font-bold text-center border border-green-200">
+                              Thank you! Your catering request has been sent.
+                          </div>
+                      )}
+                      {submitStatus === "error" && (
+                          <div className="bg-red-50 text-red-700 p-3 rounded-md text-sm font-bold text-center border border-red-200">
+                              Something went wrong. Please try again later.
+                          </div>
+                      )}
+
                       {/* Submit Button */}
-                      <button type="submit" className="w-full bg-[#20064A] hover:bg-[#1a053d] text-white py-4 rounded-md font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-4 transition-all mt-2 active:scale-95">
-                          Send Now
-                          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rotate-0"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="w-full bg-[#20064A] hover:bg-[#1a053d] text-white py-4 rounded-md font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-4 transition-all mt-2 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+                      >
+                          {isSubmitting ? "Sending..." : "Send Now"}
+                          {!isSubmitting && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rotate-0"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>}
                       </button>
                   </form>
               </div>

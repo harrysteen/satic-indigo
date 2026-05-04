@@ -1,10 +1,50 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import PageHeader from "../layout/PageHeader";
 import VioletPetals from "../decorations/VioletPetals";
 
 export default function CareersView() {
+  const [fileName, setFileName] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("_captcha", "false");
+    formData.append("_template", "table");
+    formData.append("_subject", "New Career Application - Indigo");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/indigoindopakrestaurant@gmail.com", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+        setFileName(null);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      if (submitStatus !== "error") {
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      }
+    }
+  };
+
   return (
     <div className="w-full bg-white font-plus-jakarta overflow-hidden">
       <PageHeader 
@@ -131,15 +171,16 @@ export default function CareersView() {
                     <h3 className="text-[#20064A] text-2xl mb-2 uppercase tracking-widest font-el-messiri">JOIN US TODAY</h3>
                     <div className="w-32 h-[1px] bg-[#DFAB40]/60 mb-8" />
 
-                    <form className="w-full flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+                    <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit} encType="multipart/form-data">
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Name</label>
-                            <input required type="text" placeholder="John Doe" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/20 px-4 py-3 rounded-md text-[#20064A] text-sm outline-none focus:border-[#DFAB40] font-plus-jakarta" />
+                            <input required name="name" type="text" placeholder="John Doe" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/20 px-4 py-3 rounded-md text-[#20064A] text-sm outline-none focus:border-[#DFAB40] font-plus-jakarta" />
                         </div>
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Phone Number</label>
                             <input 
                               required 
+                              name="phone"
                               type="tel" 
                               pattern="[0-9]{10}" 
                               maxLength={10}
@@ -150,28 +191,53 @@ export default function CareersView() {
                         </div>
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Email Address</label>
-                            <input required type="email" placeholder="you@example.com" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/20 px-4 py-3 rounded-md text-[#20064A] text-sm outline-none focus:border-[#DFAB40] font-plus-jakarta" />
+                            <input required name="email" type="email" placeholder="you@example.com" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/20 px-4 py-3 rounded-md text-[#20064A] text-sm outline-none focus:border-[#DFAB40] font-plus-jakarta" />
                         </div>
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Description</label>
-                            <textarea rows={3} placeholder="Tell us about yourself..." className="w-full bg-[#fdf8ec] border border-[#DFAB40]/20 px-4 py-3 rounded-md text-[#20064A] text-sm outline-none focus:border-[#DFAB40] resize-none font-plus-jakarta" />
+                            <textarea name="description" rows={3} placeholder="Tell us about yourself..." className="w-full bg-[#fdf8ec] border border-[#DFAB40]/20 px-4 py-3 rounded-md text-[#20064A] text-sm outline-none focus:border-[#DFAB40] resize-none font-plus-jakarta" />
                         </div>
 
                         {/* File Upload Area */}
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Upload Your Resume</label>
-                            <div className="w-full border-2 border-dashed border-[#DFAB40]/30 bg-[#fdf8ec]/50 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer hover:border-[#DFAB40]/60 transition-all group">
+                            <div className="relative w-full border-2 border-dashed border-[#DFAB40]/30 bg-[#fdf8ec]/50 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer hover:border-[#DFAB40]/60 transition-all group overflow-hidden">
+                                <input 
+                                    type="file" 
+                                    name="attachment" 
+                                    accept=".pdf,.doc,.docx" 
+                                    required 
+                                    onChange={(e) => setFileName(e.target.files?.[0]?.name || null)}
+                                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" 
+                                />
                                 <div className="w-8 h-8 bg-[#20064A] text-[#DFAB40] rounded-lg flex items-center justify-center mb-2">
                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14"/></svg>
                                 </div>
-                                <p className="text-[#20064A] text-[9px] font-bold uppercase tracking-wider mb-1 font-plus-jakarta">Upload resume</p>
+                                <p className="text-[#20064A] text-[9px] font-bold uppercase tracking-wider mb-1 font-plus-jakarta text-center px-4 truncate w-full">
+                                    {fileName ? fileName : "Upload resume"}
+                                </p>
                                 <p className="text-[#DFAB40] text-[8px] font-bold uppercase opacity-60 font-plus-jakarta">PDF or DOC (Max 5MB)</p>
                             </div>
                         </div>
 
-                        <button className="w-full bg-[#20064A] text-white py-4 mt-2 rounded-md font-bold text-xs md:text-sm uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-[#300a6e] transition-all hover:shadow-lg active:scale-95 font-plus-jakarta">
-                            Submit Application
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="rotate-45"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+                        {submitStatus === "success" && (
+                            <div className="bg-green-50 text-green-700 p-3 rounded-md text-sm font-bold text-center border border-green-200">
+                                Thank you! Your application has been submitted successfully.
+                            </div>
+                        )}
+                        {submitStatus === "error" && (
+                            <div className="bg-red-50 text-red-700 p-3 rounded-md text-sm font-bold text-center border border-red-200">
+                                Something went wrong. Please try again later.
+                            </div>
+                        )}
+
+                        <button 
+                            type="submit" 
+                            disabled={isSubmitting}
+                            className="w-full bg-[#20064A] text-white py-4 mt-2 rounded-md font-bold text-xs md:text-sm uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-[#300a6e] transition-all hover:shadow-lg active:scale-95 font-plus-jakarta disabled:opacity-70 disabled:cursor-not-allowed"
+                        >
+                            {isSubmitting ? "Sending..." : "Submit Application"}
+                            {!isSubmitting && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="rotate-45"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>}
                         </button>
                     </form>
                   </div>

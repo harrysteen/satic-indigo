@@ -1,12 +1,53 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import VioletPetals from "../decorations/VioletPetals";
 import PageHeader from "../layout/PageHeader";
 import OldReservationUIBackup from "./OldReservationUIBackup";
 
 export default function ContactView() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const formData = new FormData(e.currentTarget);
+    
+    // Add FormSubmit specific configuration
+    formData.append("_captcha", "false");
+    formData.append("_template", "table");
+    formData.append("_subject", "New Contact Us Submission - Indigo");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/indigoindopakrestaurant@gmail.com", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      
+      // Reset success message after 5 seconds
+      if (submitStatus !== "error") {
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      }
+    }
+  };
 
   return (
     <div className="w-full bg-white font-el-messiri overflow-hidden">
@@ -154,16 +195,17 @@ export default function ContactView() {
                     <h3 className="text-[#20064A] text-xl md:text-2xl font-el-messiri mb-2 uppercase tracking-wide">Let&apos;s Connect</h3>
                     <div className="w-20 h-[1.5px] bg-[#DFAB40]/60 mb-6" />
                     
-                    <form className="w-full flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+                    <form className="w-full flex flex-col gap-5" onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div className="flex flex-col gap-1.5">
                                 <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Name</label>
-                                <input required type="text" placeholder="John Doe" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 font-plus-jakarta" />
+                                <input required name="name" type="text" placeholder="John Doe" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 font-plus-jakarta" />
                             </div>
                             <div className="flex flex-col gap-1.5">
                                 <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Phone</label>
                                 <input 
                                   required 
+                                  name="phone"
                                   type="tel" 
                                   pattern="[0-9]{10}" 
                                   maxLength={10}
@@ -176,22 +218,37 @@ export default function ContactView() {
                         
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Email Address</label>
-                            <input required type="email" placeholder="you@example.com" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 font-plus-jakarta" />
+                            <input required name="email" type="email" placeholder="you@example.com" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 font-plus-jakarta" />
                         </div>
                         
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Subject</label>
-                            <input type="text" placeholder="General Inquiry" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 font-plus-jakarta" />
+                            <input name="subject" type="text" placeholder="General Inquiry" className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-2.5 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 font-plus-jakarta" />
                         </div>
                         
                         <div className="flex flex-col gap-1.5">
                             <label className="text-[#20064A] text-[9px] font-bold uppercase tracking-widest pl-1 font-plus-jakarta">Message</label>
-                            <textarea rows={5} placeholder="Type here..." className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-3 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 resize-none font-plus-jakarta" />
+                            <textarea required name="message" rows={5} placeholder="Type here..." className="w-full bg-[#fdf8ec] border border-[#DFAB40]/10 px-4 py-3 rounded-md text-[#20064A] text-sm focus:outline-none focus:border-[#DFAB40]/40 resize-none font-plus-jakarta" />
                         </div>
 
-                        <button type="submit" className="w-full bg-[#20064A] text-white py-4 mt-4 rounded-md font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-[#300a6e] transition-all font-plus-jakarta">
-                            Send Now
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="rotate-45 font-plus-jakarta"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+                        {submitStatus === "success" && (
+                            <div className="bg-green-50 text-green-700 p-3 rounded-md text-sm font-bold text-center border border-green-200">
+                                Thank you! Your message has been sent successfully.
+                            </div>
+                        )}
+                        {submitStatus === "error" && (
+                            <div className="bg-red-50 text-red-700 p-3 rounded-md text-sm font-bold text-center border border-red-200">
+                                Something went wrong. Please try again later.
+                            </div>
+                        )}
+
+                        <button 
+                          type="submit" 
+                          disabled={isSubmitting}
+                          className="w-full bg-[#20064A] text-white py-4 mt-4 rounded-md font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-[#300a6e] transition-all font-plus-jakarta disabled:opacity-70 disabled:cursor-not-allowed"
+                        >
+                            {isSubmitting ? "Sending..." : "Send Now"}
+                            {!isSubmitting && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="rotate-45 font-plus-jakarta"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>}
                         </button>
                     </form>
                   </div>
