@@ -1,3 +1,4 @@
+// Static menu data types and structures
 export interface MenuItem {
   id: string;
   name: string;
