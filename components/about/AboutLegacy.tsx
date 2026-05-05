@@ -5,7 +5,7 @@ const AboutLegacy = () => {
   return (
     <section className="relative py-24 bg-brand-white text-[#20074A] overflow-hidden">
       {/* Corner Decorations - Purple Flowers Bottom */}
-      <div className="absolute -bottom-12 -left-12 w-80 h-80 pointer-events-none z-20">
+      <div className="absolute -bottom-6 -left-6 md:-bottom-12 md:-left-12 w-40 h-40 md:w-80 md:h-80 pointer-events-none z-20">
         <Image
           src="/PNGS/flowers/voilate-left-corner.png"
           alt=""
@@ -14,7 +14,7 @@ const AboutLegacy = () => {
           className="object-contain"
         />
       </div>
-      <div className="absolute -bottom-12 -right-12 w-80 h-80 pointer-events-none z-20 scale-x-[-1]">
+      <div className="absolute -bottom-6 -right-6 md:-bottom-12 md:-right-12 w-40 h-40 md:w-80 md:h-80 pointer-events-none z-20 scale-x-[-1]">
         <Image
           src="/PNGS/flowers/voilate-left-corner.png"
           alt=""

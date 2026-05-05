@@ -5,7 +5,7 @@ const AboutPhilosophy = () => {
   return (
     <section className="relative py-24 bg-[#20074A] overflow-hidden min-h-[600px] flex items-center">
       {/* Corner Flowers - Yellow Top (Connecting from previous section transition) */}
-      <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none z-20">
+      <div className="absolute top-0 left-0 w-32 h-32 md:w-64 md:h-64 pointer-events-none z-20">
         <Image
           src="/PNGS/flowers/yellow-top-left-coner.png"
           alt=""
@@ -14,7 +14,7 @@ const AboutPhilosophy = () => {
           className="object-contain"
         />
       </div>
-      <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none z-20 scale-x-[-1]">
+      <div className="absolute top-0 right-0 w-32 h-32 md:w-64 md:h-64 pointer-events-none z-20 scale-x-[-1]">
         <Image
           src="/PNGS/flowers/yellow-top-left-coner.png"
           alt=""

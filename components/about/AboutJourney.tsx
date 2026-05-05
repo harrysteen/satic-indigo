@@ -18,7 +18,7 @@ const AboutJourney = () => {
       </div>
 
       {/* White Corner Flowers - Bottom */}
-      <div className="absolute bottom-0 left-0 w-80 h-80 pointer-events-none z-20">
+      <div className="absolute bottom-0 left-0 w-40 h-40 md:w-80 md:h-80 pointer-events-none z-20">
         <Image
           src="/PNGS/flowers/left-corner-white.png"
           alt=""
@@ -27,7 +27,7 @@ const AboutJourney = () => {
           className="object-contain"
         />
       </div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 pointer-events-none z-20 scale-x-[-1]">
+      <div className="absolute bottom-0 right-0 w-40 h-40 md:w-80 md:h-80 pointer-events-none z-20 scale-x-[-1]">
         <Image
           src="/PNGS/flowers/left-corner-white.png"
           alt=""

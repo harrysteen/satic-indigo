@@ -4,25 +4,6 @@ import Image from 'next/image';
 const AboutForward = () => {
   return (
     <section className="relative py-24 bg-[#20074A] overflow-hidden min-h-[600px] flex items-center">
-      {/* Corner Flowers - Yellow Top */}
-      <div className="absolute -top-12 -left-12 w-80 h-80 pointer-events-none z-20">
-        <Image
-          src="/PNGS/flowers/yellow-top-left-coner.png"
-          alt=""
-          width={500}
-          height={500}
-          className="object-contain"
-        />
-      </div>
-      <div className="absolute -top-12 -right-12 w-80 h-80 pointer-events-none z-20 scale-x-[-1]">
-        <Image
-          src="/PNGS/flowers/yellow-top-left-coner.png"
-          alt=""
-          width={500}
-          height={500}
-          className="object-contain"
-        />
-      </div>
 
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="text-center mb-12">

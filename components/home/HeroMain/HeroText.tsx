@@ -40,21 +40,12 @@ export default function HeroText({ onPlayClick }: HeroTextProps) {
         Once upon a time, there was a land that was sought out the most for its gold. Travellers from across the world flocked to see this mystical prosperity. They discovered this gold in the vast farmlands and across kitchens. This gold was the spices.
       </p>
 
-      {onPlayClick ? (
-        <button
-          onClick={onPlayClick}
-          className="bg-brand-blue text-brand-white px-8 py-3.5 rounded-lg md:rounded-xl font-medium text-[14px] md:text-[15px] transition-all duration-300 hover:opacity-90 hover:shadow-[0_8px_24px_0_rgba(44,0,116,0.3)] outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 cursor-pointer"
-        >
-          Let the story unfold
-        </button>
-      ) : (
-        <Link
-          href="/about"
-          className="bg-brand-blue text-brand-white px-8 py-3.5 rounded-lg md:rounded-xl font-medium text-[14px] md:text-[15px] transition-all duration-300 hover:opacity-90 hover:shadow-[0_8px_24px_0_rgba(44,0,116,0.3)] outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
-        >
-          Let the story unfold
-        </Link>
-      )}
+      <Link
+        href="/about"
+        className="bg-brand-blue text-brand-white px-8 py-3.5 rounded-lg md:rounded-xl font-medium text-[14px] md:text-[15px] transition-all duration-300 hover:opacity-90 hover:shadow-[0_8px_24px_0_rgba(44,0,116,0.3)] outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
+      >
+        Let the story unfold
+      </Link>
     </div>
   );
 }

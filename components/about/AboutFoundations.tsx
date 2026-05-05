@@ -13,7 +13,7 @@ const AboutFoundations = ({ className = "" }: { className?: string }) => {
   return (
     <section className={`relative bg-[#20074A] -mt-[1px] z-20 ${className}`}>
       {/* Corner Flowers - Yellow Top */}
-      <div className="absolute top-0 left-0 w-80 h-80 pointer-events-none z-20">
+      <div className="absolute top-0 left-0 w-40 h-40 md:w-80 md:h-80 pointer-events-none z-20">
         <Image 
           src="/PNGS/flowers/yellow-top-left-coner.png" 
           alt="" 
@@ -22,7 +22,7 @@ const AboutFoundations = ({ className = "" }: { className?: string }) => {
           className="object-contain object-top object-left"
         />
       </div>
-      <div className="absolute top-0 right-0 w-80 h-80 pointer-events-none z-20 scale-x-[-1]">
+      <div className="absolute top-0 right-0 w-40 h-40 md:w-80 md:h-80 pointer-events-none z-20 scale-x-[-1]">
         <Image 
           src="/PNGS/flowers/yellow-top-left-coner.png" 
           alt="" 
