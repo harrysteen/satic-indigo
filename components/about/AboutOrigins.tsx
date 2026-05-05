@@ -42,11 +42,11 @@ const AboutOrigins = () => {
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 space-y-10 order-2 md:order-1">
-            <p className="text-xl md:text-2xl lg:text-[28px] text-[#20074A] leading-relaxed font-sans font-medium">
+            <p className="text-xl md:text-2xl lg:text-[22px] text-[#20074A] leading-relaxed font-sans font-medium">
               In the fertile countryside of <span className="text-[#D4A539]">Sindh</span>, the fire cackles as 
               the wood is stoked. The ritual is carefully repeated.
             </p>
-            <p className="text-xl md:text-2xl lg:text-[28px] text-[#20074A] leading-relaxed font-sans font-medium">
+            <p className="text-xl md:text-2xl lg:text-[22px] text-[#20074A] leading-relaxed font-sans font-medium">
               When the Sarson ka tel (Mustard oil) lets off a dull 
               steam, a handful of fresh spices is dotingly added to it. 
               The air is filled with an aroma that sings the notes of the 
