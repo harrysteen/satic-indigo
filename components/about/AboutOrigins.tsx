@@ -3,48 +3,71 @@ import Image from 'next/image';
 
 const AboutOrigins = () => {
   return (
-    <section className="relative py-20 bg-brand-white text-brand-blue overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+    <section className="relative py-24 bg-brand-white text-[#20074A] overflow-hidden">
+
+      {/* Corner Decorations */}
+      <div className="absolute -bottom-12 -left-12 w-80 h-80 pointer-events-none z-20">
+        <Image 
+          src="/PNGS/flowers/voilate-left-corner.png" 
+          alt="" 
+          width={500} 
+          height={500} 
+          className="object-contain"
+        />
+      </div>
+      <div className="absolute -bottom-12 -right-12 w-80 h-80 pointer-events-none scale-x-[-1] z-20">
+        <Image 
+          src="/PNGS/flowers/voilate-left-corner.png" 
+          alt="" 
+          width={500} 
+          height={500} 
+          className="object-contain"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="flex flex-col items-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-[64px] font-el-messiri text-[#20074A] mb-8 text-center">
+            Before Recipes Were Written
+          </h2>
+          
+          {/* Decorative Divider */}
+          <div className="flex items-center justify-center gap-4 w-full max-w-2xl mx-auto">
+            <div className="flex-1 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4A539]/50 to-[#D4A539]" />
+            <div className="w-3 h-3 rotate-45 bg-[#D4A539]" />
+            <div className="flex-1 h-[1.5px] bg-gradient-to-l from-transparent via-[#D4A539]/50 to-[#D4A539]" />
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
           {/* Text Content */}
-          <div className="flex-1 space-y-6">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight">
-              Before Recipes <br />
-              <span className="italic">Were Written</span>
-            </h2>
-            <div className="w-24 h-[1px] bg-brand-yellow" />
-            <p className="text-lg text-brand-blue/80 leading-relaxed max-w-xl">
-              In the sundrenched plains of Sindh, flavor wasn't measured in spoons, but in seasons. 
-              The kitchen was a sacred theater where every sizzle told a story of the soil. 
-              It was here, in the ancestral hearths, that the foundations of what we now call 
-              <span className="font-semibold text-brand-blue"> INDIGO</span> were laid.
+          <div className="flex-1 space-y-10 order-2 md:order-1">
+            <p className="text-xl md:text-2xl lg:text-[28px] text-[#20074A] leading-relaxed font-sans font-medium">
+              In the fertile countryside of <span className="text-[#D4A539]">Sindh</span>, the fire cackles as 
+              the wood is stoked. The ritual is carefully repeated.
             </p>
-            <p className="text-lg text-brand-blue/80 leading-relaxed max-w-xl">
-              From the bustling spice markets of Shikarpur to the serene banks of the Indus, 
-              our culinary heritage is a tapestry of traditions passed down through whispers and 
-              the intuitive touch of hands that knew the soul of every seed.
+            <p className="text-xl md:text-2xl lg:text-[28px] text-[#20074A] leading-relaxed font-sans font-medium">
+              When the Sarson ka tel (Mustard oil) lets off a dull 
+              steam, a handful of fresh spices is dotingly added to it. 
+              The air is filled with an aroma that sings the notes of the 
+              earth and its people.
             </p>
           </div>
 
-          {/* Illustration/Image */}
-          <div className="flex-1 relative aspect-square w-full max-w-md">
-             <div className="absolute inset-0 bg-brand-yellow/10 rounded-full scale-110 blur-3xl" />
-             <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-white">
-                <Image
-                  src="/about_origins_sindh.png"
-                  alt="Origins of Sindh"
-                  fill
-                  className="object-cover"
-                />
-             </div>
-             {/* Decorative Elements */}
-             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-yellow/20 rounded-full blur-xl" />
+          {/* Image */}
+          <div className="flex-1 order-1 md:order-2 w-full">
+            <div className="relative aspect-[4/3] w-full transform scale-110">
+               <Image
+                 src="/kumar-images/Aboutsec2.png"
+                 alt="Tradition of Sindh"
+                 fill
+                 className="object-contain"
+                 priority
+               />
+            </div>
           </div>
         </div>
       </div>
-      
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#20074A]/5 -skew-x-12 translate-x-1/2" />
     </section>
   );
 };

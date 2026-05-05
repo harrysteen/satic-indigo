@@ -3,55 +3,63 @@ import Image from 'next/image';
 
 const AboutPhilosophy = () => {
   return (
-    <section className="py-24 bg-brand-white text-brand-blue relative">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div className="lg:col-span-5 space-y-8">
-            <span className="text-brand-yellow font-sans tracking-[0.3em] uppercase text-sm font-bold">Our Philosophy</span>
-            <h2 className="text-4xl md:text-5xl font-serif leading-tight">Fire, Spice, and <br /><span className="italic">Memory</span></h2>
-            <p className="text-lg text-brand-blue/80 leading-relaxed">
-              We believe that true Indo-Pak cuisine is an alchemy of patience and passion. 
-              Our kitchen doesn't just produce food; it recreates moments. 
-              The slow-roasting of spices, the rhythmic pounding of ginger, the precise 
-              tempering of oil—these are our rituals of respect.
+    <section className="relative py-24 bg-[#20074A] overflow-hidden min-h-[600px] flex items-center">
+      {/* Corner Flowers - Yellow Top (Connecting from previous section transition) */}
+      <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none z-20">
+        <Image 
+          src="/PNGS/flowers/yellow-top-left-coner.png" 
+          alt="" 
+          width={400} 
+          height={400} 
+          className="object-contain"
+        />
+      </div>
+      <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none z-20 scale-x-[-1]">
+        <Image 
+          src="/PNGS/flowers/yellow-top-left-coner.png" 
+          alt="" 
+          width={400} 
+          height={400} 
+          className="object-contain"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-[40px] md:text-[56px] font-el-messiri font-normal text-[#FAFAFA] leading-[1.2] md:leading-[77.33px] tracking-[0.02em] mb-4">
+            When Kitchens Began to Travel
+          </h2>
+          <div className="flex items-center justify-center gap-4 w-full max-w-xl mx-auto">
+            <div className="flex-1 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4A539]/50 to-[#D4A539]" />
+            <div className="w-3 h-3 rotate-45 bg-[#D4A539]" />
+            <div className="flex-1 h-[1.5px] bg-gradient-to-l from-transparent via-[#D4A539]/50 to-[#D4A539]" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Image Side - Partition Train */}
+          <div className="relative aspect-[4/3] rounded-sm overflow-hidden border-2 border-[#D4A539]/30 shadow-2xl">
+            <Image 
+              src="/kumar-images/Aboutsec5.jpg" 
+              alt="Historical migration" 
+              fill 
+              className="object-cover grayscale"
+            />
+            <div className="absolute inset-0 bg-black/10" />
+          </div>
+
+          {/* Text Side */}
+          <div className="space-y-6">
+            <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#FAFAFA] leading-relaxed md:leading-[37.33px] tracking-[0.02em]">
+              Then came movement. Homes were left behind, but flavors were not. Recipes were no longer tied to place 
+              they were carried in memory. A spice once grown nearby was replaced with what was available. 
+              A method once learned in one region was adapted in another.
             </p>
-            <div className="grid grid-cols-2 gap-8 pt-4">
-               <div>
-                  <h4 className="font-serif text-xl mb-2">Authenticity</h4>
-                  <p className="text-sm text-brand-blue/60">No shortcuts. No compromises. Only the original path.</p>
-               </div>
-               <div>
-                  <h4 className="font-serif text-xl mb-2">Soul</h4>
-                  <p className="text-sm text-brand-blue/60">Every plate is served with a piece of our history.</p>
-               </div>
-            </div>
+            <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#FAFAFA] leading-relaxed md:leading-[37.33px] tracking-[0.02em]">
+              What was lost in distance was rebuilt through instinct. <br />
+              And slowly.
+            </p>
           </div>
-
-          <div className="lg:col-span-7 grid grid-cols-2 gap-4 h-[500px]">
-             <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/PNGS/chef.png"
-                  alt="Our Chef"
-                  fill
-                  className="object-cover"
-                />
-             </div>
-             <div className="grid grid-rows-2 gap-4">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                  <Image
-                    src="/PNGS/restaurant1.png"
-                    alt="The Ambiance"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="relative rounded-2xl overflow-hidden shadow-xl bg-brand-blue flex items-center justify-center p-8 text-center">
-                   <p className="text-brand-white font-serif text-2xl italic">"Taste is the only time machine we possess."</p>
-                </div>
-             </div>
-          </div>
-
         </div>
       </div>
     </section>

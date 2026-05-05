@@ -3,56 +3,66 @@ import Image from 'next/image';
 
 const AboutLegacy = () => {
   return (
-    <section className="py-24 bg-[#20074A] text-brand-white relative overflow-hidden">
-      {/* Background Decorative */}
-      <div className="absolute top-0 right-0 w-96 h-96 opacity-10 translate-x-1/2 -translate-y-1/2">
-         <Image src="/PNGS/full-flower.png" alt="decor" fill className="object-contain" />
+    <section className="relative py-24 bg-brand-white text-[#20074A] overflow-hidden">
+      {/* Corner Decorations - Purple Flowers Bottom */}
+      <div className="absolute -bottom-12 -left-12 w-80 h-80 pointer-events-none z-20">
+        <Image 
+          src="/PNGS/flowers/voilate-left-corner.png" 
+          alt="" 
+          width={500} 
+          height={500} 
+          className="object-contain"
+        />
+      </div>
+      <div className="absolute -bottom-12 -right-12 w-80 h-80 pointer-events-none z-20 scale-x-[-1]">
+        <Image 
+          src="/PNGS/flowers/voilate-left-corner.png" 
+          alt="" 
+          width={500} 
+          height={500} 
+          className="object-contain"
+        />
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div className="mb-12 relative w-48 h-48 rounded-full border-2 border-brand-yellow/30 p-2 overflow-hidden">
-             <div className="w-full h-full rounded-full overflow-hidden relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop" // Placeholder for matriarch
-                  alt="Legacy Matriarch"
-                  fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                />
-             </div>
-          </div>
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl text-center">
+        {/* Heading */}
+        <h2 className="text-[40px] md:text-[56px] font-el-messiri font-bold text-[#20074A] leading-[1.2] md:leading-[77.33px] tracking-[0.02em] mb-4">
+          Where It Comes Together
+        </h2>
 
-          <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
-            A Story Not Told, <br />
-            <span className="text-brand-yellow">But Served.</span>
-          </h2>
-
-          <p className="text-xl text-brand-white/70 leading-relaxed mb-12">
-            INDIGO is more than a restaurant; it is an invitation to sit at our table, 
-            to share in our history, and to become part of a story that continues 
-            with every guest we welcome.
-          </p>
-
-          <div className="flex flex-col md:flex-row gap-6">
-             <a 
-               href="/menu" 
-               className="px-8 py-4 bg-brand-yellow text-brand-blue font-bold rounded-full hover:bg-brand-white transition-colors duration-300"
-             >
-               Explore the Menu
-             </a>
-             <a 
-               href="/contact" 
-               className="px-8 py-4 border border-white/20 text-brand-white font-bold rounded-full hover:bg-white/10 transition-colors duration-300"
-             >
-               Visit Us
-             </a>
-          </div>
+        {/* Decorative Divider */}
+        <div className="flex items-center justify-center gap-4 w-full max-w-xl mx-auto mb-10">
+          <div className="flex-1 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4A539]/50 to-[#D4A539]" />
+          <div className="w-3 h-3 rotate-45 bg-[#D4A539]" />
+          <div className="flex-1 h-[1.5px] bg-gradient-to-l from-transparent via-[#D4A539]/50 to-[#D4A539]" />
         </div>
-      </div>
-      
-      {/* Bottom Decorative */}
-      <div className="absolute bottom-0 left-0 w-64 h-32 opacity-20">
-         <div className="w-full h-full bg-gradient-to-t from-brand-yellow/20 to-transparent blur-3xl" />
+
+        {/* Body Text - Refined for 4 clean lines */}
+        <div className="max-w-6xl mx-auto mb-16 px-4">
+          <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#20074A] leading-relaxed md:leading-[1.5] tracking-[0.02em] mb-4 md:whitespace-nowrap">
+            Today, the kitchen looks different. The tools are modern. The techniques are precise.
+          </p>
+          <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#20074A] leading-relaxed md:leading-[1.5] tracking-[0.02em] mb-4 md:whitespace-nowrap">
+            But the foundation remains fire, spice, and memory.
+          </p>
+          <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#20074A] leading-relaxed md:leading-[1.5] tracking-[0.02em] mb-4 md:whitespace-nowrap">
+            Every dish carries traces of land, movement, and time.
+          </p>
+          <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#20074A] leading-relaxed md:leading-[1.5] tracking-[0.02em] md:whitespace-nowrap">
+            What began in open fires now arrives at your table not as history, but as experience.
+          </p>
+        </div>
+
+        {/* Modern Kitchen Image - Scaled Down */}
+        <div className="relative aspect-[16/9] w-full max-w-4xl mx-auto rounded-sm overflow-hidden border-2 border-[#D4A539]/30 shadow-2xl">
+          <Image 
+            src="/kumar-images/Aboutsec6.png" 
+            alt="Modern Indigo Kitchen" 
+            fill 
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#20074A]/5" />
+        </div>
       </div>
     </section>
   );

@@ -1,85 +1,101 @@
 import React from 'react';
 import Image from 'next/image';
 
-const spices = [
-  {
-    number: '01',
-    name: 'CARDAMOM',
-    description: 'Cardamom remembers the damp monsoons of the Western Ghats.',
-    icon: '/PNGS/flowers/voilate-left-corner.png' // Using existing asset for flair
-  },
-  {
-    number: '02',
-    name: 'CUMIN',
-    description: 'Cumin carries the warmth of dry Kathiawadi fields.',
-    icon: '/PNGS/flowers/yellow-top-left-coner.png'
-  },
-  {
-    number: '03',
-    name: 'CLOVE',
-    description: 'Clove holds the rhythm of a town waking before dawn.',
-    icon: '/PNGS/flowers/voilate-top-corner.png'
-  },
-  {
-    number: '04',
-    name: 'SAFFRON',
-    description: 'Saffron breathes the quiet air of Kashmiri valleys.',
-    icon: '/PNGS/flowers/yellow-right-corner.png'
-  },
-  {
-    number: '05',
-    name: 'FENUGREEK',
-    description: 'Fenugreek lingers with a gentle bitterness, grounding every blend.',
-    icon: '/PNGS/flowers/left-corner-white.png'
-  }
+const spiceImages = [
+  '/kumar-images/Aboutsec31.png',
+  '/kumar-images/Aboutsec32.png',
+  '/kumar-images/Aboutsec33.png',
+  '/kumar-images/Aboutsec34.png',
+  '/kumar-images/Aboutsec35.png'
 ];
 
 const AboutFoundations = () => {
   return (
-    <section className="py-24 bg-[#20074A] text-brand-white relative overflow-hidden">
-      {/* Background Watermark/Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-         <Image src="/PNGS/Subtract.png" alt="pattern" fill className="object-cover" />
+    <section className="relative py-24 bg-[#20074A] overflow-hidden">
+      {/* Corner Flowers - Yellow Top */}
+      <div className="absolute -top-12 -left-12 w-80 h-80 pointer-events-none z-20">
+        <Image 
+          src="/PNGS/flowers/yellow-top-left-coner.png" 
+          alt="" 
+          width={500} 
+          height={500} 
+          className="object-contain"
+        />
+      </div>
+      <div className="absolute -top-12 -right-12 w-80 h-80 pointer-events-none z-20 scale-x-[-1]">
+        <Image 
+          src="/PNGS/flowers/yellow-top-left-coner.png" 
+          alt="" 
+          width={500} 
+          height={500} 
+          className="object-contain"
+        />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6">The Five Foundations</h2>
-          <div className="flex justify-center mb-6">
-             <div className="w-12 h-[2px] bg-brand-yellow mr-2" />
-             <div className="w-4 h-4 rounded-full border border-brand-yellow rotate-45" />
-             <div className="w-12 h-[2px] bg-brand-yellow ml-2" />
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/kumar-images/EXPERIENC-events.png" 
+          alt="Foundations Background" 
+          fill 
+          className="object-cover opacity-100"
+        />
+        <div className="absolute inset-0 bg-[#20074A]/40" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-20 space-y-8">
+          <h2 className="text-[40px] md:text-[56px] font-el-messiri text-[#FAFAFA] leading-[1.2] md:leading-[77.33px] tracking-[0.02em]">
+            The Five Foundations
+          </h2>
+          
+          <div className="flex items-center justify-center gap-4 w-full max-w-2xl mx-auto">
+            <div className="flex-1 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4A539]/50 to-[#D4A539]" />
+            <div className="w-3 h-3 rotate-45 bg-[#D4A539]" />
+            <div className="flex-1 h-[1.5px] bg-gradient-to-l from-transparent via-[#D4A539]/50 to-[#D4A539]" />
           </div>
-          <p className="max-w-2xl mx-auto text-lg text-brand-white/70 leading-relaxed">
-            A timeless combination of five spices, the elements that give birth to flavor. 
-            A spice is not just an ingredient; it is a memory held in oil, waiting to be released by measured heat.
+
+          <p className="max-w-4xl mx-auto text-xl md:text-[32px] font-el-messiri font-semibold text-[#CF9000] leading-relaxed md:leading-[40px] tracking-[0.02em]">
+            A timeless combination of five spices, the elements that give birth to flavor. A spice is not just taste. 
+            It is a memory held in oil, waiting to be released by measured heat.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {spices.map((spice, index) => (
-            <div 
-              key={index} 
-              className={`group relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-brand-yellow/50 transition-all duration-500 hover:-translate-y-2 ${index >= 3 ? 'md:col-span-1 lg:col-span-1' : ''}`}
-            >
-              <div className="flex justify-between items-start mb-12">
-                <span className="text-4xl font-serif text-brand-yellow/40 group-hover:text-brand-yellow transition-colors duration-500">{spice.number}</span>
-                <div className="w-10 h-10 relative opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-                  <Image src={spice.icon} alt={spice.name} fill className="object-contain" />
-                </div>
-              </div>
-              <h3 className="text-xl font-serif tracking-widest mb-4">{spice.name}</h3>
-              <p className="text-sm text-brand-white/60 leading-relaxed">
-                {spice.description}
-              </p>
+        {/* Spice Cards Grid (Images are the cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 max-w-6xl mx-auto">
+          {spiceImages.slice(0, 3).map((img, idx) => (
+            <div key={idx} className="relative aspect-[3/2] w-full shadow-2xl rounded-sm overflow-hidden bg-white">
+               <Image
+                 src={img}
+                 alt={`Spice Foundation ${idx + 1}`}
+                 fill
+                 className="object-contain"
+                 priority
+               />
             </div>
           ))}
         </div>
 
-        <div className="mt-20 text-center">
-           <p className="italic text-brand-white/50 text-xl font-serif">
-             "Each pinch in a pan is an act of remembering a quiet conversation between a hand and those who came before."
-           </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {spiceImages.slice(3, 5).map((img, idx) => (
+            <div key={idx} className="relative aspect-[3/2] w-full shadow-2xl rounded-sm overflow-hidden bg-white">
+               <Image
+                 src={img}
+                 alt={`Spice Foundation ${idx + 4}`}
+                 fill
+                 className="object-contain"
+                 priority
+               />
+            </div>
+          ))}
+        </div>
+
+        {/* Footer Text */}
+        <div className="mt-20 text-center max-w-5xl mx-auto">
+          <p className="text-xl md:text-[32px] font-el-messiri font-semibold text-[#FAFAFA] leading-relaxed md:leading-[37.33px] tracking-[0.02em]">
+            Each pinch in a pan is an act of remembering a quiet conversation between a hand today and those who came before.
+          </p>
         </div>
       </div>
     </section>

@@ -7,22 +7,25 @@ const AboutHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/about_hero_spices.png" // I'll move the generated image here
-          alt="Indian Spices"
+          src="/kumar-images/Aboutsec1 bg.jpg"
+          alt="Indian Spices Background"
           fill
-          className="object-cover brightness-[0.4]"
+          className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#20074A]/60 to-[#20074A]/90" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif text-brand-white mb-6 tracking-tight leading-tight">
-          THE STORIES OF <br />
-          <span className="text-brand-yellow">SPITFIRES AND SPICES</span>
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        <h1 className="flex flex-col items-center">
+          <span className="text-[40px] md:text-[60px] lg:text-[96px] font-el-messiri font-normal text-[#FAFAFA] leading-[1.2] md:leading-[118px] uppercase tracking-normal">
+            THE STORIES OF
+          </span>
+          <span className="text-[40px] md:text-[60px] lg:text-[96px] font-el-messiri font-normal text-[#D4A539] leading-tight md:leading-[96px] uppercase tracking-normal">
+            SPITFIRES AND SPICES
+          </span>
         </h1>
-        <p className="text-lg md:text-2xl text-brand-white/80 font-sans tracking-[0.2em] uppercase">
+        <p className="mt-6 text-2xl lg:text-[37.33px] font-el-messiri font-semibold text-[#D4A539] leading-tight md:leading-[37.33px] tracking-normal">
           A Culinary Saga Beyond Borders
         </p>
       </div>

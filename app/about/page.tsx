@@ -1,10 +1,11 @@
 import AboutHero from "@/components/about/AboutHero";
 import AboutOrigins from "@/components/about/AboutOrigins";
 import AboutFoundations from "@/components/about/AboutFoundations";
-import AboutHistory from "@/components/about/AboutHistory";
 import AboutJourney from "@/components/about/AboutJourney";
 import AboutPhilosophy from "@/components/about/AboutPhilosophy";
 import AboutLegacy from "@/components/about/AboutLegacy";
+import AboutForward from "@/components/about/AboutForward";
+import AboutClosing from "@/components/about/AboutClosing";
 
 export const metadata = {
   title: "About Us - INDIGO",
@@ -17,10 +18,11 @@ export default function AboutPage() {
       <AboutHero />
       <AboutOrigins />
       <AboutFoundations />
-      <AboutHistory />
       <AboutJourney />
       <AboutPhilosophy />
       <AboutLegacy />
+      <AboutForward />
+      <AboutClosing />
     </div>
   );
 }
