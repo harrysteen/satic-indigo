@@ -18,14 +18,14 @@ const AboutHero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         <h1 className="flex flex-col items-center">
-          <span className="text-[40px] md:text-[60px] lg:text-[96px] font-el-messiri font-normal text-[#FAFAFA] leading-[1.2] md:leading-[118px] uppercase tracking-normal">
+          <span className="text-[40px] md:text-[60px] lg:text-[56px] font-el-messiri font-normal text-[#FAFAFA] leading-tight lg:leading-[77.33px] uppercase tracking-normal">
             THE STORIES OF
           </span>
-          <span className="text-[40px] md:text-[60px] lg:text-[96px] font-el-messiri font-normal text-[#D4A539] leading-tight md:leading-[96px] uppercase tracking-normal">
+          <span className="text-[40px] md:text-[60px] lg:text-[56px] font-el-messiri font-normal text-[#D4A539] leading-tight lg:leading-[77.33px] uppercase tracking-normal">
             SPITFIRES AND SPICES
           </span>
         </h1>
-        <p className="mt-6 text-2xl lg:text-[37.33px] font-el-messiri font-semibold text-[#D4A539] leading-tight md:leading-[37.33px] tracking-normal">
+        <p className="mt-4 text-2xl lg:text-[22px] font-el-messiri font-semibold text-[#D4A539] leading-tight tracking-normal">
           A Culinary Saga Beyond Borders
         </p>
       </div>

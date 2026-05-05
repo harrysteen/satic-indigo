@@ -11,7 +11,7 @@ interface MenuListItemProps {
 
 export default function MenuListItem({ name, description, price, isVegetarian, isSpicy, isPopular }: MenuListItemProps) {
   return (
-    <div className="flex flex-col mb-8 md:mb-10 last:mb-0 group cursor-default">
+    <div className="flex flex-col mb-0 group cursor-default">
       <div className="flex justify-between items-baseline mb-1">
         <div className="flex items-center gap-2">
           {isPopular && (

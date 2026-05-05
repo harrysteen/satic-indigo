@@ -35,7 +35,7 @@ export default function MenuCategoryLayout({ items }: MenuCategoryLayoutProps) {
   return (
     <div className="w-full max-w-[1240px] mx-auto px-4 md:px-8 py-6 md:py-10 border-[1.5px] border-[#DFAB40]/40 relative bg-white shadow-sm rounded-sm">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
-        
+
         {/* Left Column - Fixed Image (lg:col-span-3) */}
         <div className="lg:col-span-3">
           <div className="lg:sticky lg:top-32 flex flex-col items-center">
@@ -58,44 +58,46 @@ export default function MenuCategoryLayout({ items }: MenuCategoryLayoutProps) {
                 </span>
               </div>
             </div>
-            
+
             {/* Navigation Arrows (Matching Screenshot Style) */}
             <div className="flex gap-4 mt-8">
-                <button 
-                  onClick={handlePrev}
-                  className="w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center text-[#20064A] hover:bg-gray-50 transition-all shadow-md active:scale-95 translate-y-2 md:translate-y-0"
-                >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <button 
-                  onClick={handleNext}
-                  className="w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center text-[#20064A] hover:bg-gray-50 transition-all shadow-md active:scale-95 translate-y-2 md:translate-y-0"
-                >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+              <button
+                onClick={handlePrev}
+                className="w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center text-[#20064A] hover:bg-gray-50 transition-all shadow-md active:scale-95 translate-y-2 md:translate-y-0"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center text-[#20064A] hover:bg-gray-50 transition-all shadow-md active:scale-95 translate-y-2 md:translate-y-0"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
             </div>
           </div>
         </div>
 
         {/* Right Columns - Scrollable Menu (lg:col-span-9) */}
         <div className="lg:col-span-9 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 items-start h-[500px] md:h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-            {items.map((item, idx) => (
-              <div 
-                key={item.id} 
-                className={`transition-all duration-300 cursor-pointer p-2 rounded-lg hover:bg-[#fafafa] ${idx === safeIndex ? 'ring-1 ring-[#DFAB40]/30 bg-[#fafafa]' : ''}`}
-                onClick={() => setActiveIndex(idx)}
-              >
-                <MenuListItem {...item} />
-              </div>
-            ))}
+          <div className="h-[500px] md:h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 items-start h-fit">
+              {items.map((item, idx) => (
+                <div 
+                  key={item.id} 
+                  className={`transition-all duration-200 cursor-pointer p-3 rounded-lg hover:bg-[#fafafa] ${idx === safeIndex ? 'ring-2 ring-inset ring-[#DFAB40]/40 bg-[#fafafa]' : ''}`}
+                  onClick={() => setActiveIndex(idx)}
+                >
+                  <MenuListItem {...item} />
+                </div>
+              ))}
+            </div>
           </div>
-          
+
           {/* Section Disclaimer */}
           <div className="mt-8 pt-4 border-t border-[#DFAB40]/20 flex justify-center lg:justify-start">
-             <p className="text-[#20064A]/40 text-[10px] font-bold tracking-widest uppercase italic">
-               * All items prepared fresh with traditional spices & herbs
-             </p>
+            <p className="text-[#20064A]/40 text-[10px] font-bold tracking-widest uppercase italic">
+              * All items prepared fresh with traditional spices & herbs
+            </p>
           </div>
         </div>
       </div>

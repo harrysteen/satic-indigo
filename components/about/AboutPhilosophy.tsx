@@ -6,27 +6,27 @@ const AboutPhilosophy = () => {
     <section className="relative py-24 bg-[#20074A] overflow-hidden min-h-[600px] flex items-center">
       {/* Corner Flowers - Yellow Top (Connecting from previous section transition) */}
       <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none z-20">
-        <Image 
-          src="/PNGS/flowers/yellow-top-left-coner.png" 
-          alt="" 
-          width={400} 
-          height={400} 
+        <Image
+          src="/PNGS/flowers/yellow-top-left-coner.png"
+          alt=""
+          width={400}
+          height={400}
           className="object-contain"
         />
       </div>
       <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none z-20 scale-x-[-1]">
-        <Image 
-          src="/PNGS/flowers/yellow-top-left-coner.png" 
-          alt="" 
-          width={400} 
-          height={400} 
+        <Image
+          src="/PNGS/flowers/yellow-top-left-coner.png"
+          alt=""
+          width={400}
+          height={400}
           className="object-contain"
         />
       </div>
 
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-[40px] md:text-[56px] font-el-messiri font-normal text-[#FAFAFA] leading-[1.2] md:leading-[77.33px] tracking-[0.02em] mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-[32px] md:text-[48px] font-el-messiri font-normal text-[#FAFAFA] leading-tight lg:leading-[60px] tracking-[0.02em] mb-4">
             When Kitchens Began to Travel
           </h2>
           <div className="flex items-center justify-center gap-4 w-full max-w-xl mx-auto">
@@ -39,10 +39,10 @@ const AboutPhilosophy = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image Side - Partition Train */}
           <div className="relative aspect-[4/3] rounded-sm overflow-hidden border-2 border-[#D4A539]/30 shadow-2xl">
-            <Image 
-              src="/kumar-images/Aboutsec5.jpg" 
-              alt="Historical migration" 
-              fill 
+            <Image
+              src="/kumar-images/Aboutsec5.jpg"
+              alt="Historical migration"
+              fill
               className="object-cover grayscale"
             />
             <div className="absolute inset-0 bg-black/10" />
@@ -50,12 +50,12 @@ const AboutPhilosophy = () => {
 
           {/* Text Side */}
           <div className="space-y-6">
-            <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#FAFAFA] leading-relaxed md:leading-[37.33px] tracking-[0.02em]">
-              Then came movement. Homes were left behind, but flavors were not. Recipes were no longer tied to place 
-              they were carried in memory. A spice once grown nearby was replaced with what was available. 
+            <p className="text-lg md:text-[22px] font-plus-jakarta font-semibold text-[#FAFAFA] leading-relaxed md:leading-[32px] tracking-[0.02em]">
+              Then came movement. Homes were left behind, but flavors were not. Recipes were no longer tied to place
+              they were carried in memory. A spice once grown nearby was replaced with what was available.
               A method once learned in one region was adapted in another.
             </p>
-            <p className="text-lg md:text-[26.67px] font-plus-jakarta font-semibold text-[#FAFAFA] leading-relaxed md:leading-[37.33px] tracking-[0.02em]">
+            <p className="text-lg md:text-[22px] font-plus-jakarta font-semibold text-[#FAFAFA] leading-relaxed md:leading-[32px] tracking-[0.02em]">
               What was lost in distance was rebuilt through instinct. <br />
               And slowly.
             </p>
