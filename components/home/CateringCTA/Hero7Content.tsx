@@ -11,15 +11,11 @@ export default function Hero7Content() {
       {/* Decorative Gold Divider */}
       <div className="flex items-center justify-center w-full max-w-[500px] my-3 md:my-4">
         <div className="flex-1 w-full bg-gradient-to-r from-transparent to-[#DFAB40] h-[1px]"></div>
-        <div className="mx-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#DFAB40"/>
-          </svg>
-        </div>
+        <div className="mx-4 transform rotate-45 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#DFAB40] shadow-[0_0_8px_rgba(223,171,64,0.3)]"></div>
         <div className="flex-1 w-full bg-gradient-to-l from-transparent to-[#DFAB40] h-[1px]"></div>
       </div>
 
-      <p className="text-[#D8A131] font-semibold text-lg md:text-[21px] font-sans tracking-wide max-w-3xl mb-5 md:mb-6 mt-1 md:mt-2">
+      <p className="text-[#D8A131] font-semibold text-lg md:text-[21px] font-serif tracking-wide max-w-3xl mb-5 md:mb-6 mt-1 md:mt-2">
         To take our taste beyond our space, we take on catering requests for events of all types.
       </p>
       

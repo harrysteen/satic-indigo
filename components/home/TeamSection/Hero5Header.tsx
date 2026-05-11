@@ -9,7 +9,7 @@ export default function Hero5Header() {
       
       <MainDivider className="!my-3 md:!my-4" />
 
-      <p className="text-brand-yellow font-semibold text-base md:text-lg lg:text-[20px] font-sans tracking-wide max-w-3xl mt-1 md:mt-2">
+      <p className="text-brand-yellow font-semibold text-base md:text-lg lg:text-[20px] font-serif tracking-wide max-w-3xl mt-1 md:mt-2">
         Proud, passionate, and powered, the INDIGO team brings our savoury stories to life.
       </p>
     </div>

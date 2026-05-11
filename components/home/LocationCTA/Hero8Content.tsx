@@ -11,15 +11,11 @@ export default function Hero8Content() {
       {/* Decorative Gold Divider */}
       <div className="flex items-center justify-center w-full max-w-[400px] mb-3">
         <div className="flex-1 w-full bg-gradient-to-r from-transparent to-[#DFAB40] h-[1px]"></div>
-        <div className="mx-3">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#DFAB40" />
-          </svg>
-        </div>
+        <div className="mx-3 transform rotate-45 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#DFAB40] shadow-[0_0_8px_rgba(223,171,64,0.3)]"></div>
         <div className="flex-1 w-full bg-gradient-to-l from-transparent to-[#DFAB40] h-[1px]"></div>
       </div>
 
-      <p className="text-[#DFAB40] font-medium text-[18px] font-sans tracking-wide max-w-2xl mb-8 text-center">
+      <p className="text-[#DFAB40] font-medium text-[18px] font-serif tracking-wide max-w-2xl mb-8 text-center">
         We are well-connected and easy to reach. We wait to serve you with a dining experience like no other.
       </p>
 

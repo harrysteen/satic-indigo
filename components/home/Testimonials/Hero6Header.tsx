@@ -9,7 +9,7 @@ export default function Hero6Header() {
       
       <MainDivider className="!my-3 md:!my-4" />
       
-      <p className="text-brand-yellow font-medium text-base md:text-[20px] font-sans tracking-wide mt-1 md:mt-2">
+      <p className="text-brand-yellow font-medium text-base md:text-[20px] font-serif tracking-wide mt-1 md:mt-2">
         Hear from our loyal patrons-the true essence of our food and space.
       </p>
     </div>

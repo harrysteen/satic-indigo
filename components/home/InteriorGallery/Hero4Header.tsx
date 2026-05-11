@@ -9,7 +9,7 @@ export default function Hero4Header() {
       
       <MainDivider className="!my-3 md:!my-4" />
       
-      <p className="text-brand-yellow text-lg md:text-[22px] font-medium font-el-messiri tracking-wide mt-1 md:mt-2">
+      <p className="text-brand-yellow text-lg md:text-[22px] font-medium font-serif tracking-wide mt-1 md:mt-2">
         Our space is designed with hints of ethnic and the spirit of community.
       </p>
     </div>

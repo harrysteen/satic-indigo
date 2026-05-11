@@ -41,8 +41,8 @@ export default function HeroShape({ children }: Readonly<{ children: React.React
         </defs>
 
         {/* Solid White Fills (Overlapping the center by 10px to perfectly prevent subpixel rendering cracks) */}
-        <use href="#arch-left-fill" fill="white" />
-        <use href="#arch-left-fill" fill="white" transform="translate(1000, 0) scale(-1, 1)" />
+        <use href="#arch-left-fill" fill="#fafafa" />
+        <use href="#arch-left-fill" fill="#fafafa" transform="translate(1000, 0) scale(-1, 1)" />
 
         {/* Delicate Golden Outlines */}
         <g fill="none" stroke="#DFAB40" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke">
@@ -52,7 +52,7 @@ export default function HeroShape({ children }: Readonly<{ children: React.React
       </svg>
 
       {/* Main Container under the arc seamlessly connected mathematically */}
-      <div className="bg-white w-[100%] md:w-[95%] lg:w-[90%] xl:w-[85%] flex-grow relative pb-10 md:pb-16 flex flex-col items-center">
+      <div className="bg-[#fafafa] w-[100%] md:w-[95%] lg:w-[90%] xl:w-[85%] flex-grow relative pb-10 md:pb-16 flex flex-col items-center">
         {children}
       </div>
     </div>
